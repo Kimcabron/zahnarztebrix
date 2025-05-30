@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahnarztpraxis Brix - Haldensleben</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#2563eb',
+                        'dental-teal': '#0891b2',
+                        'dental-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-xl md:text-2xl font-bold text-dental-blue">
+                        Zahnarztpraxis Brix
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
+                    <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+                    <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+                </nav>
+                
+                <!-- Call Button -->
+                <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
+                    📞 03904 44113
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white pt-8 pb-8">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Willkommen in der Zahnarztpraxis Brix</h1>
+                <p class="text-lg opacity-90">Zahnärzte Andrea und Oliver Brix</p>
+            </div>
+        </section>
+
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere Leistungen</h2>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold text-dental-blue">Prophylaxe</h3>
+                        <p class="text-gray-600">Professionelle Zahnreinigung und Vorsorge.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold text-dental-blue">Behandlungen</h3>
+                        <p class="text-gray-600">Füllungen, Wurzelbehandlungen und mehr.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold text-dental-blue">Zahnersatz</h3>
+                        <p class="text-gray-600">Kronen, Brücken, Prothesen und Implantate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Kontakt</h2>
+                <p class="text-lg text-gray-700">Für Terminvereinbarungen oder Fragen erreichen Sie uns unter:</p>
+                <a href="tel:0390444113" class="text-dental-blue font-semibold">📞 03904 44113</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-300 text-sm">&copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

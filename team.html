@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unser Team - Zahnarztpraxis Brix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#2563eb',
+                        'dental-teal': '#0891b2',
+                        'dental-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-xl md:text-2xl font-bold text-dental-blue">
+                        Zahnarztpraxis Brix
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
+                    <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+                    <a href="team.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Team</a>
+                </nav>
+                
+                <!-- Call Button -->
+                <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
+                    📞 03904 44113
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-gray-700">Home</a>
+                <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+                <a href="team.html" class="block py-2 text-dental-blue font-semibold">Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Zahnärzte -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Unsere Zahnärzte</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Dr. Andrea Brix -->
+                        <div class="bg-gray-50 rounded-lg p-8 text-center">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
+                                 alt="Dr. Andrea Brix" 
+                                 class="w-48 h-48 mx-auto rounded-full object-cover mb-6 shadow-lg">
+                            <h3 class="text-2xl font-bold text-dental-blue mb-2">Dr. Andrea Brix</h3>
+                            <p class="text-lg text-gray-600">Zahnärztin & Praxisinhaberin</p>
+                        </div>
+
+                        <!-- Dr. Oliver Brix -->
+                        <div class="bg-gray-50 rounded-lg p-8 text-center">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
+                                 alt="Dr. Oliver Brix" 
+                                 class="w-48 h-48 mx-auto rounded-full object-cover mb-6 shadow-lg">
+                            <h3 class="text-2xl font-bold text-dental-blue mb-2">Dr. Oliver Brix</h3>
+                            <p class="text-lg text-gray-600">Zahnarzt & Praxisinhaber</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Praxisteam -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Unser Praxisteam</h2>
+                    
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <!-- Team Mitglied 1 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1594824406308-d39ad97b5b9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Team Mitglied 2 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Team Mitglied 3 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1582467207828-f48847b3bbc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Team Mitglied 4 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Team Mitglied 5 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Team Mitglied 6 -->
+                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                            <img src="https://images.unsplash.com/photo-1594736797933-d0e501ba2fe6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                                 alt="Teamfoto Placeholder" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
+                            <p class="text-gray-600 text-sm">[Funktion]</p>
+                        </div>
+
+                        <!-- Vous pouvez ajouter plus de membres ici -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">                
+                <div class="bg-gradient-to-r from-dental-blue to-dental-teal text-white p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Jetzt Termin vereinbaren</h3>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="tel:0390444113" class="bg-white text-dental-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            📞 03904 44113
+                        </a>
+                        <div class="text-sm opacity-90">
+                            <p>Dammühlenweg 13</p>
+                            <p>39340 Haldensleben</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Zahnarztpraxis Brix</h3>
+                    <p class="text-gray-300 text-sm">
+                        Dammühlenweg 13<br>
+                        39340 Haldensleben<br>
+                        (Althaldensleben)
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <p class="text-gray-300 text-sm">
+                        📞 <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
+                    <p class="text-gray-300 text-sm">
+                        Mo-Mi: 08:00-12:00, 14:00-18:00<br>
+                        Do-Fr: 08:00-12:00
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

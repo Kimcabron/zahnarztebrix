@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahnarztpraxis Brix - Haldensleben</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#2563eb',
+                        'dental-teal': '#0891b2',
+                        'dental-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-xl md:text-2xl font-bold text-dental-blue">
+                        Zahnarztpraxis Brix
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
+                    <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+                    <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+                </nav>
+                
+                <!-- Call Button -->
+                <a href="tel:+49123456789" 
+                   class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-full shadow-lg z-50 md:static md:ml-auto md:mr-4 md:py-2 md:px-4 md:rounded">
+                    📞 Jetzt anrufen
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
+                <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+                <a href="team.html" class="block py-2 text-gray-700">Team</a>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Horaires + Téléphone Section (Prioritaire) -->
+    <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white pt-20 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Zahnarztpraxis Brix</h1>
+                <p class="text-lg opacity-90">Zahnärzte Andrea und Oliver Brix</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Horaires -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
+                    <h2 class="text-lg md:text-xl font-semibold mb-4 flex items-center">
+                        🕒 Öffnungszeiten
+                    </h2>
+                    <div class="space-y-3">
+                        <!-- Header colonnes -->
+                        <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base font-bold border-b border-white/30 pb-2">
+                            <span></span>
+                            <span class="text-center">Morgen</span>
+                            <span class="text-center">Nachmittag</span>
+                        </div>
+                        <!-- Montag - Mittwoch -->
+                        <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
+                            <span class="font-bold text-left">Mo - Mi:</span>
+                            <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
+                            <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">14:00-18:00</span>
+                        </div>
+                        <!-- Donnerstag- Freitag -->
+                        <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
+                            <span class="font-bold text-left">Do - Fr:</span>
+                            <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
+                            <span class="text-center text-gray-300 font-medium">geschlossen</span>
+                        </div>
+                    </div>
+                    <!-- Info urgences -->
+                    <div class="mt-4 pt-3 border-t border-white/30">
+                        <p class="text-xs md:text-sm opacity-90">
+                            🚨 Bei Notfällen außerhalb Praxiszeit: 
+                            <a href="http://www.zbd-boerdekreis.de/seite/294524/hdl.html" 
+                               target="_blank" 
+                               class="text-yellow-200 hover:text-white underline font-medium">
+                               Notdienst Bördekreis
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Contact -->
+                <div class="bg-white shadow-md rounded-2xl p-6 text-center space-y-4 max-w-md mx-auto">
+                    <!-- Anruf-Button -->
+                    <a href="tel:0390444113"
+                        class="inline-flex items-center justify-center w-full px-4 py-3 bg-emerald-600 text-white text-lg font-semibold rounded-xl hover:bg-emerald-700 transition">
+                        📞 Jetzt anrufen: 03904 44113
+                    </a>
+                
+                    <!-- Adresse -->
+                    <div class="text-gray-700 leading-relaxed">
+                        <p>Dammühlenweg 13<br>39340 Haldensleben</p>
+                    </div>
+                
+                    <!-- Google Maps Button -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center w-full px-4 py-3 bg-sky-600 text-white text-lg font-semibold rounded-xl hover:bg-sky-700 transition">
+                        📍 Auf Karte anzeigen
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" 
+                     alt="Moderne Zahnarztpraxis - Behandlungsraum" 
+                     class="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg">
+                <p class="text-center text-gray-600 text-sm mt-2">Unsere moderne Praxis in Haldensleben</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Présentation Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Willkommen in unserer Praxis</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Zahnarzt Team" 
+                             class="w-full h-64 object-cover rounded-lg shadow-md">
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <p class="text-gray-700 leading-relaxed">
+                            Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Dr. Andrea und Dr. Oliver Brix 
+                            eine umfassende zahnmedizinische Betreuung für die ganze Familie.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raccourci Leistungen -->
+    <!-- Leistungen – Professionelle Version -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere Leistungen</h2>
+    
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+    
+                    <!-- Prophylaxe -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="text-4xl mb-4 text-center" aria-label="Prophylaxe">🪥</div>
+                        <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Prophylaxe</h3>
+                        <p class="text-gray-600 text-sm text-center">Professionelle Zahnreinigung und Vorsorge</p>
+                    </div>
+    
+                    <!-- Zahnerhalt -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="text-4xl mb-4 text-center" aria-label="Zahnerhalt">🦷</div>
+                        <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Zahnerhalt</h3>
+                        <p class="text-gray-600 text-sm text-center">Füllungen, Wurzelbehandlungen, Parodontologie</p>
+                    </div>
+    
+                    <!-- Zahnersatz -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="text-4xl mb-4 text-center" aria-label="Zahnersatz">👑</div>
+                        <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Zahnersatz</h3>
+                        <p class="text-gray-600 text-sm text-center">Kronen, Brücken, Prothesen</p>
+                    </div>
+                </div>
+    
+                <div class="text-center">
+                    <a href="leistungen.html"
+                        class="bg-dental-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                        Alle Leistungen entdecken →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Raccourci Team -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unser Team</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="text-center bg-gray-50 p-6 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                             alt="Dr. Andrea Brix" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold text-dental-blue mb-2">Dr. Andrea Brix</h3>
+                        <p class="text-gray-600">Zahnärztin</p>
+                    </div>
+                    
+                    <div class="text-center bg-gray-50 p-6 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
+                             alt="Dr. Oliver Brix" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold text-dental-blue mb-2">Dr. Oliver Brix</h3>
+                        <p class="text-gray-600">Zahnarzt</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="team.html" class="bg-dental-teal text-white px-8 py-3 rounded-lg hover:bg-cyan-700 transition-colors font-semibold">
+                        Unser Team kennenlernen →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Zahnarztpraxis Brix</h3>
+                    <p class="text-gray-300 text-sm">
+                        Dammühlenweg 13<br>
+                        39340 Haldensleben<br>
+                        (Althaldensleben)
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <p class="text-gray-300 text-sm">
+                        📞 <a href="tel:0390444113" class="hover:text-white">0390444113</a><br>
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
+                    <p class="text-gray-300 text-sm">
+                        Mo-Mi: 08:00-12:00, 14:00-18:00<br>
+                        Do-Fr: 08:00-12:00
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

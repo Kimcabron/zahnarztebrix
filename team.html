@@ -25,9 +25,9 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="text-xl md:text-2xl font-bold text-dental-blue">
-                        Zahnarztpraxis Brix
-                    </div>
+                    <a href="index.html">
+                        <img src="images/logo2.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
+                    </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -59,96 +59,90 @@
         </div>
     </header>
 
+    <!-- Spacer responsive pour compenser la hauteur du header -->
+    <div class="h-24 md:h-28"></div>
+
     <!-- Team Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                
-                <!-- Zahnärzte -->
-                <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Unsere Zahnärzte</h2>
-                    
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <!-- Dr. Andrea Brix -->
-                        <div class="bg-gray-50 rounded-lg p-8 text-center">
-                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
-                                 alt="Dr. Andrea Brix" 
-                                 class="w-48 h-48 mx-auto rounded-full object-cover mb-6 shadow-lg">
-                            <h3 class="text-2xl font-bold text-dental-blue mb-2">Dr. Andrea Brix</h3>
-                            <p class="text-lg text-gray-600">Zahnärztin & Praxisinhaberin</p>
-                        </div>
 
-                        <!-- Dr. Oliver Brix -->
-                        <div class="bg-gray-50 rounded-lg p-8 text-center">
-                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
-                                 alt="Dr. Oliver Brix" 
-                                 class="w-48 h-48 mx-auto rounded-full object-cover mb-6 shadow-lg">
-                            <h3 class="text-2xl font-bold text-dental-blue mb-2">Dr. Oliver Brix</h3>
-                            <p class="text-lg text-gray-600">Zahnarzt & Praxisinhaber</p>
+                <!-- Zahnärzte (photo de couple) - Plus proéminente -->
+                <div class="mb-20">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Unsere Zahnärzte</h2>
+                    <div class="flex flex-col items-center">
+                        <img src="images/team/za.png"
+                             alt="Dr. Andrea und Dr. Oliver Brix"
+                             class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl mb-8 border-4 border-dental-blue/20" />
+                        <div class="text-center">
+                            <h3 class="text-2xl md:text-3xl font-bold text-dental-blue mb-2">Dr. Andrea &amp; Dr. Oliver Brix</h3>
+                            <p class="text-lg text-gray-600 mb-4">Zahnärzte &amp; Praxisinhaber</p>
+                            <p class="text-gray-700 max-w-2xl mx-auto">
+                                Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde führen wir gemeinsam unsere Praxis mit Leidenschaft und Fachwissen. 
+                                Unser Ziel ist es, Ihnen die bestmögliche zahnmedizinische Betreuung zu bieten.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Praxisteam -->
-                <div class="mb-16">
+                <!-- Praxisteam - Images plus grandes -->
+                <div>
                     <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Unser Praxisteam</h2>
-                    
-                    <div class="grid md:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        
                         <!-- Team Mitglied 1 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1594824406308-d39ad97b5b9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow">
+                            <img src="images/team/ma.png"
+                                 alt="Mitarbeiterin 1"
+                                 class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md border-2 border-gray-100" />
                             <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
                             <p class="text-gray-600 text-sm">[Funktion]</p>
                         </div>
 
                         <!-- Team Mitglied 2 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow">
+                            <img src="images/team/ma1-1.png"
+                                 alt="Mitarbeiterin 2"
+                                 class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md border-2 border-gray-100" />
                             <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
                             <p class="text-gray-600 text-sm">[Funktion]</p>
                         </div>
 
                         <!-- Team Mitglied 3 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1582467207828-f48847b3bbc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow">
+                            <img src="images/team/ma2-1.png"
+                                 alt="Mitarbeiterin 3"
+                                 class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md border-2 border-gray-100" />
                             <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
                             <p class="text-gray-600 text-sm">[Funktion]</p>
                         </div>
 
                         <!-- Team Mitglied 4 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow">
+                            <img src="images/team/ma5-2.png"
+                                 alt="Mitarbeiterin 4"
+                                 class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md border-2 border-gray-100" />
                             <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
                             <p class="text-gray-600 text-sm">[Funktion]</p>
                         </div>
 
                         <!-- Team Mitglied 5 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+                        <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow">
+                            <img src="images/team/ma4-2.png"
+                                 alt="Mitarbeiterin 5"
+                                 class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md border-2 border-gray-100" />
                             <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
                             <p class="text-gray-600 text-sm">[Funktion]</p>
                         </div>
 
-                        <!-- Team Mitglied 6 -->
-                        <div class="bg-white rounded-lg p-6 shadow-md text-center">
-                            <img src="https://images.unsplash.com/photo-1594736797933-d0e501ba2fe6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-                                 alt="Teamfoto Placeholder" 
-                                 class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
-                            <h3 class="text-lg font-semibold text-dental-blue mb-1">[Vorname Nachname]</h3>
-                            <p class="text-gray-600 text-sm">[Funktion]</p>
-                        </div>
-
-                        <!-- Vous pouvez ajouter plus de membres ici -->
+                    </div>
+                    
+                    <!-- Message d'équipe -->
+                    <div class="mt-12 text-center">
+                        <p class="text-gray-700 max-w-3xl mx-auto">
+                            Unser erfahrenes Team steht Ihnen mit Kompetenz und Freundlichkeit zur Seite. 
+                            Jeder Mitarbeiter bringt seine Expertise ein, um Ihnen den bestmöglichen Service zu bieten.
+                        </p>
                     </div>
                 </div>
 
@@ -216,9 +210,11 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
 </body>
 </html>

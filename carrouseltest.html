@@ -18,6 +18,119 @@
       }
     }
   </script>
+  <style>
+    /* Carousel CSS */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
+    }
+    
+    .carousel-slide {
+      width: 33.333%;
+      position: relative;
+    }
+    
+    /* Radio buttons cachés */
+    .carousel-radio {
+      display: none;
+    }
+    
+    /* Affichage des slides selon le radio sélectionné */
+    #slide-1:checked ~ .carousel-slides { transform: translateX(0%); }
+    #slide-2:checked ~ .carousel-slides { transform: translateX(-33.333%); }
+    #slide-3:checked ~ .carousel-slides { transform: translateX(-66.666%); }
+    
+    /* Styles des flèches de navigation */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      color: #374151;
+      font-size: 20px;
+      font-weight: bold;
+      user-select: none;
+    }
+    
+    .carousel-arrow:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-prev {
+      left: 1rem;
+    }
+    
+    .carousel-next {
+      right: 1rem;
+    }
+    
+    /* Styles des boutons de navigation (points) */
+    .carousel-nav {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+    
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    #slide-1:checked ~ .carousel-nav .dot-1,
+    #slide-2:checked ~ .carousel-nav .dot-2,
+    #slide-3:checked ~ .carousel-nav .dot-3 {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.2);
+    }
+    
+    /* Masquer/afficher les flèches selon le slide actif */
+    .carousel-prev, .carousel-next { display: flex; }
+    
+    /* Flèche précédente : masquer sur slide 1 */
+    #slide-1:checked ~ .carousel-prev-1 { display: none; }
+    
+    /* Flèche suivante : masquer sur slide 3 */
+    #slide-3:checked ~ .carousel-next-3 { display: none; }
+    
+    /* Logique des flèches selon le slide actif */
+    #slide-1:checked ~ .carousel-prev-2,
+    #slide-1:checked ~ .carousel-prev-3,
+    #slide-2:checked ~ .carousel-prev-1,
+    #slide-2:checked ~ .carousel-prev-3,
+    #slide-3:checked ~ .carousel-prev-1,
+    #slide-3:checked ~ .carousel-prev-2 { display: none; }
+    
+    #slide-1:checked ~ .carousel-next-2,
+    #slide-1:checked ~ .carousel-next-3,
+    #slide-2:checked ~ .carousel-next-1,
+    #slide-2:checked ~ .carousel-next-3,
+    #slide-3:checked ~ .carousel-next-1,
+    #slide-3:checked ~ .carousel-next-2 { display: none; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -27,7 +140,7 @@
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <a href="index.html">
-            <img src="images/logo2.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
+            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
           </a>
         </div>
         <!-- Desktop Navigation -->
@@ -121,16 +234,74 @@
     </div>
   </section>
 
-  <!-- Photo Section -->
+  <!-- Photo Carousel Section -->
   <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="relative w-full aspect-[16/7] rounded-lg overflow-hidden shadow-lg bg-gray-100">
-          <img src="images/room1.png"
-            alt="Moderne Zahnarztpraxis - Behandlungsraum"
-            class="absolute inset-0 w-full h-full object-cover object-top md:object-center" />
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere moderne Praxis</h2>
+        
+        <!-- Carousel Container -->
+        <div class="carousel-container relative w-full rounded-lg overflow-hidden shadow-lg bg-gray-100" style="height:600px;">
+          
+          <!-- Radio buttons cachés pour contrôler le carousel -->
+          <input type="radio" name="carousel" id="slide-1" class="carousel-radio" checked>
+          <input type="radio" name="carousel" id="slide-2" class="carousel-radio">
+          <input type="radio" name="carousel" id="slide-3" class="carousel-radio">
+          
+          <!-- Slides Container -->
+          <div class="carousel-slides">
+            
+            <!-- Room 1 -->
+            <div class="carousel-slide">
+              <img src="images/room1.png"
+                alt="Behandlungsraum 1 - Moderne Zahnarztpraxis"
+                class="w-full h-full object-cover object-center" />
+              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
+                Behandlungsraum 1
+              </div>
+            </div>
+            
+            <!-- Room 2 -->
+            <div class="carousel-slide">
+              <img src="images/room2.png"
+                alt="Behandlungsraum 2 - Moderne Zahnarztpraxis"
+                class="w-full h-full object-cover object-center" />
+              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
+                Behandlungsraum 2
+              </div>
+            </div>
+            
+            <!-- Room 3 -->
+            <div class="carousel-slide">
+              <img src="images/room3.png"
+                alt="Behandlungsraum 3 - Moderne Zahnarztpraxis"
+                class="w-full h-full object-cover object-center" />
+              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
+                Behandlungsraum 3
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Flèches de navigation -->
+          <!-- Flèche précédente (visible sauf sur slide 1) -->
+          <label for="slide-1" class="carousel-arrow carousel-prev carousel-prev-2">‹</label>
+          <label for="slide-2" class="carousel-arrow carousel-prev carousel-prev-3">‹</label>
+          
+          <!-- Flèche suivante (visible sauf sur slide 3) -->
+          <label for="slide-2" class="carousel-arrow carousel-next carousel-next-1">›</label>
+          <label for="slide-3" class="carousel-arrow carousel-next carousel-next-2">›</label>
+          
+          <!-- Navigation Dots -->
+          <div class="carousel-nav">
+            <label for="slide-1" class="carousel-dot dot-1"></label>
+            <label for="slide-2" class="carousel-dot dot-2"></label>
+            <label for="slide-3" class="carousel-dot dot-3"></label>
+          </div>
+          
         </div>
-        <p class="text-center text-gray-600 text-sm mt-2">Unsere moderne Praxis in Haldensleben</p>
+        
+        <p class="text-center text-gray-600 text-sm mt-4">Unsere moderne Praxis in Haldensleben - 3 vollausgestattete Behandlungsräume</p>
       </div>
     </div>
   </section>
@@ -142,7 +313,7 @@
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Willkommen in unserer Praxis</h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+            <img src="images/team/za.png" 
               alt="Zahnarzt Team" 
               class="w-full h-64 object-cover rounded-lg shadow-md">
           </div>
@@ -193,26 +364,18 @@
   </section>
 
   <!-- Raccourci Team -->
-  <section class="py-12 bg-white">
+<section class="py-12 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unser Team</h2>
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div class="text-center bg-gray-50 p-6 rounded-lg">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-              alt="Dr. Andrea Brix" 
-              class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
-            <h3 class="text-xl font-semibold text-dental-blue mb-2">Dr. Andrea Brix</h3>
-            <p class="text-gray-600">Zahnärztin</p>
-          </div>
-          <div class="text-center bg-gray-50 p-6 rounded-lg">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" 
-              alt="Dr. Oliver Brix" 
-              class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
-            <h3 class="text-xl font-semibold text-dental-blue mb-2">Dr. Oliver Brix</h3>
-            <p class="text-gray-600">Zahnarzt</p>
-          </div>
-        </div>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unser Team</h2>
+            <div class="flex justify-center mb-8">
+                <div class="text-center bg-gray-50 p-6 rounded-lg">
+                    <img src="images/team/praxis-team.png" 
+                        alt="Unser Praxisteam" 
+                        class="w-48 h-48 mx-auto rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-xl font-semibold text-dental-blue mb-2">Unser Praxisteam</h3>
+                </div>
+            </div>
         <div class="text-center">
           <a href="team.html" class="bg-dental-teal text-white px-8 py-3 rounded-lg hover:bg-cyan-700 transition-colors font-semibold">
             Unser Team kennenlernen →

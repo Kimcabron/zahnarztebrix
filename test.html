@@ -25,9 +25,7 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      /* Hauteur adaptative au lieu de fixe */
-      min-height: 300px;
-      max-height: 500px;
+      height: 400px;
       background: #f8fafc;
     }
     
@@ -39,7 +37,8 @@
     }
     
     .carousel-slide {
-      width: 33.333%;
+      width: calc(100% / 3);
+      height: 100%;
       position: relative;
       display: flex;
       align-items: center;
@@ -48,12 +47,12 @@
       flex-shrink: 0;
     }
     
-    /* Images du carrousel - Garde les proportions */
+    /* Images du carrousel - Garde les proportions ET uniformise l'affichage */
     .carousel-slide img {
-      width: 100%;
-      height: 100%;
       max-width: 100%;
       max-height: 100%;
+      width: auto;
+      height: auto;
       object-fit: contain;
       object-position: center;
       /* Masquer le texte alt qui pourrait s'afficher */
@@ -181,8 +180,7 @@
     /* Support pour le swipe sur mobile */
     @media (max-width: 768px) {
       .carousel-container {
-        min-height: 250px;
-        max-height: 400px;
+        height: 300px;
       }
       
       .carousel-arrow {
@@ -316,8 +314,12 @@
           </div>
           <div class="space-y-4">
             <p class="text-gray-700 leading-relaxed text-lg">
-              Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten  Andrea und Oliver Brix 
+              Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Dr. Andrea und Dr. Oliver Brix 
               eine umfassende zahnmedizinische Betreuung für die ganze Familie.
+            </p>
+            <p class="text-gray-600">
+              Unsere moderne Praxis in Haldensleben vereint bewährte Behandlungsmethoden mit neuester Technologie 
+              für Ihren Komfort und beste Behandlungsergebnisse.
             </p>
           </div>
         </div>
@@ -430,11 +432,11 @@
           <div>
             <h3 class="text-2xl font-bold text-dental-teal mb-4">Unser Team</h3>
             <p class="text-gray-600 mb-6">
-              Lernen Sie unser erfahrenes Team kennen –  Andrea &  Oliver Brix und unsere kompetenten Mitarbeiterinnen.
+              Lernen Sie unser erfahrenes Team kennen – Dr. Andrea & Dr. Oliver Brix und unsere kompetenten Mitarbeiterinnen.
             </p>
             <div class="text-sm text-gray-600 space-y-2 mb-6">
-              <p><strong> Andrea Brix</strong> - Zahnärztin</p>
-              <p><strong> Oliver Brix</strong> - Zahnarzt</p>
+              <p><strong>Dr. Andrea Brix</strong> - Zahnärztin</p>
+              <p><strong>Dr. Oliver Brix</strong> - Zahnarzt</p>
               <p class="text-xs text-gray-500 mt-2">+ Qualifiziertes Assistenzteam</p>
             </div>
           </div>

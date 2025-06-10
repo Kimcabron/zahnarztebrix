@@ -10,7 +10,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'dental-blue': '#2563eb',
+                        'dental-blue': '#4682B4', // Couleur du header test.html
                         'dental-teal': '#0891b2',
                         'dental-green': '#059669'
                     }
@@ -20,28 +20,25 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
+    <!-- Header (remplacé par celui de test.html) -->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html">
-                        <img src="images/logo2.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
+                        <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
                     </a>
                 </div>
-                
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-6">
                     <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
                     <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
                     <a href="team.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Team</a>
                 </nav>
-                
                 <!-- Call Button -->
                 <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
                     📞 03904 44113
                 </a>
-                
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +46,6 @@
                     </svg>
                 </button>
             </div>
-            
             <!-- Mobile Navigation -->
             <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
                 <a href="index.html" class="block py-2 text-gray-700">Home</a>
@@ -205,15 +201,13 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
     </script>
 </body>
 </html>

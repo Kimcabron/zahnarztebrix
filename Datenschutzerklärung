@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung - Zahnarztpraxis Brix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dental-blue': '#4682B4',
+            'dental-teal': '#0891b2',
+            'dental-green': '#059669'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="index.html">
+            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
+          </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
+          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+          <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+        </nav>
+        <!-- Call Button -->
+        <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
+          📞 03904 44113
+        </a>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+        <a href="index.html" class="block py-2 text-gray-700">Home</a>
+        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+        <a href="team.html" class="block py-2 text-gray-700">Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Spacer responsive pour compenser la hauteur du header -->
+  <div class="h-24 md:h-28"></div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Datenschutzerklärung</h1>
+        <p class="text-lg opacity-90">Schutz Ihrer persönlichen Daten</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Datenschutz Haupttext -->
+        <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg mb-8">
+          <h2 class="text-2xl font-bold text-dental-blue mb-6">Datenschutz</h2>
+          
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+            </p>
+            
+            <p>
+              Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+            </p>
+            
+            <p>
+              Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
+            </p>
+          </div>
+        </div>
+
+        <!-- Google Analytics Section -->
+        <div class="bg-gray-50 p-6 md:p-8 rounded-lg">
+          <h2 class="text-2xl font-bold text-dental-blue mb-6">Datenschutzerklärung für die Nutzung von Google Analytics</h2>
+          
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google"). Google Analytics verwendet sog. „Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt.
+            </p>
+            
+            <p>
+              Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen. Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.
+            </p>
+            
+            <div class="bg-dental-blue/10 p-4 rounded-lg">
+              <p class="font-semibold text-dental-blue mb-2">Wichtiger Hinweis zu Cookies:</p>
+              <p>
+                Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
+              </p>
+              <a href="http://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" class="text-dental-blue hover:text-dental-teal font-semibold underline">
+                Google Analytics Opt-out Browser-Plugin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quellenangaben -->
+        <div class="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
+          <p class="font-semibold mb-2">Quellenangaben:</p>
+          <p>
+            Datenschutzerklärung von eRecht24, dem Portal zum Internetrecht von Rechtsanwalt Sören Siebert, Datenschutzerklärung für Google Analytics
+          </p>
+        </div>
+
+        <!-- Navigation zurück -->
+        <div class="mt-8 text-center">
+          <a href="index.html" class="inline-flex items-center text-dental-blue hover:text-dental-teal font-semibold">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Zurück zur Startseite
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Zahnarztpraxis Brix</h3>
+          <p class="text-gray-300 text-sm">
+            Dammühlenweg 13<br>
+            39340 Haldensleben<br>
+            (Althaldensleben)
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+          <p class="text-gray-300 text-sm">
+            <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
+          <p class="text-gray-300 text-sm">
+            Mo-Mi: 08:00-12:00, 14:00-18:00<br>
+            Do-Fr: 08:00-12:00
+          </p>
+        </div>
+      </div>
+      
+      <!-- Section légale avec liens -->
+      <div class="border-t border-gray-700 mt-8 pt-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 sm:mb-0">
+            &copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.
+          </p>
+          
+          <!-- Liens légaux -->
+          <div class="flex space-x-4 text-sm">
+            <a href="impressum.html" class="text-gray-400 hover:text-white transition-colors">
+              Impressum
+            </a>
+            <span class="text-gray-600">|</span>
+            <a href="datenschutz.html" class="text-gray-400 hover:text-white transition-colors">
+              Datenschutz
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

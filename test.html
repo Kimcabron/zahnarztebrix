@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zahnarztpraxis Brix</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <title>Leistungen - Zahnarztpraxis Brix</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,189 +18,9 @@
       }
     }
   </script>
-  <style>
-    /* Carousel CSS - Version corrigée pour garder les proportions */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      height: 400px;
-      background: #f8fafc;
-    }
-    
-    .carousel-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 300%;
-      height: 100%;
-    }
-    
-    .carousel-slide {
-      width: calc(100% / 3);
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f1f5f9;
-      flex-shrink: 0;
-    }
-    
-    /* Images du carrousel - Garde les proportions ET uniformise l'affichage */
-    .carousel-slide img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      object-position: center;
-      /* Masquer le texte alt qui pourrait s'afficher */
-      font-size: 0;
-      color: transparent;
-    }
-    
-    /* Radio buttons cachés */
-    .carousel-radio {
-      display: none;
-    }
-    
-    /* Affichage des slides selon le radio sélectionné */
-    #slide-1:checked ~ .carousel-slides { transform: translateX(0%); }
-    #slide-2:checked ~ .carousel-slides { transform: translateX(-33.333%); }
-    #slide-3:checked ~ .carousel-slides { transform: translateX(-66.666%); }
-    
-    /* Styles des flèches de navigation - Améliorés pour mobile */
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 10;
-      color: #374151;
-      font-size: 20px;
-      font-weight: bold;
-      user-select: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    
-    .carousel-arrow:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    
-    .carousel-prev {
-      left: 1rem;
-    }
-    
-    .carousel-next {
-      right: 1rem;
-    }
-    
-    /* Styles des boutons de navigation (points) - Améliorés */
-    .carousel-nav {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.75rem;
-      z-index: 10;
-      background: rgba(0,0,0,0.3);
-      padding: 8px 16px;
-      border-radius: 20px;
-    }
-    
-    .carousel-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.6);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-dot:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
-    
-    #slide-1:checked ~ .carousel-nav .dot-1,
-    #slide-2:checked ~ .carousel-nav .dot-2,
-    #slide-3:checked ~ .carousel-nav .dot-3 {
-      background: rgba(255, 255, 255, 1);
-      transform: scale(1.3);
-    }
-    
-    /* Masquer/afficher les flèches selon le slide actif */
-    .carousel-prev, .carousel-next { display: flex; }
-    
-    /* Flèche précédente : masquer sur slide 1 */
-    #slide-1:checked ~ .carousel-prev-1 { display: none; }
-    
-    /* Flèche suivante : masquer sur slide 3 */
-    #slide-3:checked ~ .carousel-next-3 { display: none; }
-    
-    /* Logique des flèches selon le slide actif */
-    #slide-1:checked ~ .carousel-prev-2,
-    #slide-1:checked ~ .carousel-prev-3,
-    #slide-2:checked ~ .carousel-prev-1,
-    #slide-2:checked ~ .carousel-prev-3,
-    #slide-3:checked ~ .carousel-prev-1,
-    #slide-3:checked ~ .carousel-prev-2 { display: none; }
-    
-    #slide-1:checked ~ .carousel-next-2,
-    #slide-1:checked ~ .carousel-next-3,
-    #slide-2:checked ~ .carousel-next-1,
-    #slide-2:checked ~ .carousel-next-3,
-    #slide-3:checked ~ .carousel-next-1,
-    #slide-3:checked ~ .carousel-next-2 { display: none; }
-
-    /* Placeholder pour les images manquantes */
-    .placeholder-img {
-      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #64748b;
-      font-size: 1.2rem;
-      font-weight: 600;
-      width: 100%;
-      height: 300px;
-    }
-
-    /* Support pour le swipe sur mobile */
-    @media (max-width: 768px) {
-      .carousel-container {
-        height: 300px;
-      }
-      
-      .carousel-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-      }
-      
-      .carousel-prev {
-        left: 0.5rem;
-      }
-      
-      .carousel-next {
-        right: 0.5rem;
-      }
-    }
-  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-
-  <!-- Header -->
+  <!-- Header (identique à test.html) -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
@@ -212,8 +31,8 @@
         </div>
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
-          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+          <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
+          <a href="leistungen.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Leistungen</a>
           <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
         </nav>
         <!-- Call Button -->
@@ -229,212 +48,185 @@
       </div>
       <!-- Mobile Navigation -->
       <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-        <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
-        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+        <a href="index.html" class="block py-2 text-gray-700">Home</a>
+        <a href="leistungen.html" class="block py-2 text-dental-blue font-semibold">Leistungen</a>
         <a href="team.html" class="block py-2 text-gray-700">Team</a>
       </nav>
     </div>
   </header>
+
   <!-- Spacer responsive pour compenser la hauteur du header -->
-  <div class="h-20 md:h-24"></div>
+  <div class="h-24 md:h-28"></div>
 
-  <!-- Horaires + Téléphone Section (Prioritaire) -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white pt-12 pb-12 md:pt-28 md:pb-28">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-16">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Horaires -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
-          <h2 class="text-lg md:text-xl font-semibold mb-4 flex items-center">
-            🕒 Öffnungszeiten
-          </h2>
-          <div class="space-y-3">
-            <!-- Header colonnes -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base font-bold border-b border-white/30 pb-2">
-              <span></span>
-              <span class="text-center">Morgen</span>
-              <span class="text-center">Nachmittag</span>
-            </div>
-            <!-- Montag - Mittwoch -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
-              <span class="font-bold text-left">Mo - Mi:</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">14:00-18:00</span>
-            </div>
-            <!-- Donnerstag- Freitag -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
-              <span class="font-bold text-left">Do - Fr:</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
-              <span class="text-center text-gray-300 font-medium">geschlossen</span>
-            </div>
-          </div>
-          <!-- Info urgences -->
-          <div class="mt-4 pt-3 border-t border-white/30">
-            <p class="text-xs md:text-sm opacity-90">
-              🚨 Bei Notfällen außerhalb Praxiszeit: 
-              <a href="http://www.zbd-boerdekreis.de/seite/294524/hdl.html" 
-                 target="_blank" 
-                 class="text-yellow-200 hover:text-white underline font-medium">
-                 Notdienst Bördekreis
-              </a>
-            </p>
-          </div>
-        </div>
-        <!-- Contact -->
-        <div class="bg-white shadow-md rounded-2xl p-6 text-center space-y-4 max-w-md mx-auto">
-          <!-- Anruf-Button -->
-          <a href="tel:0390444113"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-emerald-600 text-white text-lg font-semibold rounded-xl hover:bg-emerald-700 transition">
-            📞 Jetzt anrufen: 03904 44113
-          </a>
-          <!-- Adresse -->
-          <div class="text-gray-700 leading-relaxed">
-            <p>Dammühlenweg 13<br>39340 Haldensleben</p>
-          </div>
-          <!-- Google Maps Button -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-sky-600 text-white text-lg font-semibold rounded-xl hover:bg-sky-700 transition">
-            📍 Auf Karte anzeigen
-          </a>
-        </div>
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Unsere Leistungen</h1>
+        <p class="text-lg opacity-90">Ganzheitliche Zahnmedizin für die ganze Familie</p>
       </div>
     </div>
   </section>
 
-  <!-- Présentation Section - DENTISTES D'ABORD -->
-  <section class="py-12 bg-white">
+  <!-- Services Section -->
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Willkommen in unserer Praxis</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="max-w-4xl mx-auto space-y-12">
+
+        <!-- Prophylaxe & Prävention -->
+        <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Prophylaxe & Prävention</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Gesunde Zähne von Anfang an</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Professionelle Zahnreinigung mit Ultraschall, Airflow und Bürstenreinigung (für Erwachsene)</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Fissurenversiegelung bei Kindern zum Schutz der Kauflächen</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Aufklärung über Zahnhygiene und Ernährung – besonders wichtig bei Kindern</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Frühzeitiges Erkennen von Zahnfehlstellungen und Kieferproblemen</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Bleaching </li>
+        </ul>
+          <div class="bg-dental-blue/10 p-4 rounded-lg">
+            <p class="text-dental-blue font-semibold">Regelmäßige Prophylaxe spart Zeit, Schmerzen und Kosten – für ein strahlendes Lächeln!</p>
+          </div>
+        </div>
+
+        <!-- Zahnerhaltung -->
+        <div class="bg-white border border-gray-200 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Zahnerhaltung (Konservierende Zahnheilkunde)</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Wenn der Zahn erhalten werden kann</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Moderne Füllmaterialien: Komposit (Kunststoff), Keramik, Gold (kein Amalgam mehr)</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Ästhetische Lösungen je nach Wunsch und Zahnsituation</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Individuelle Beratung zur Materialwahl und möglichen Zuzahlungen</li>
+          </ul>
+        </div>
+
+        <!-- Wurzelbehandlungen -->
+        <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Wurzelbehandlungen (Endodontie)</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Zahnerhalt trotz Entzündung</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Wurzelkanalbehandlung bei tiefergehender Karies oder Zahntrauma</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Wurzelspitzenresektion bei komplizierten Entzündungen</li>
+          </ul>
+          <p class="text-dental-blue font-semibold">Ziel: Den natürlichen Zahn möglichst lange erhalten.</p>
+        </div>
+
+        <!-- Parodontologie -->
+        <div class="bg-white border border-gray-200 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Parodontologie</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Gesundes Zahnfleisch – stabile Zähne</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Behandlung von Zahnfleischentzündungen und Parodontitis</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Einsatz moderner Diagnostik (z. B. Keimbestimmung) zur gezielten Therapie</li>
+          </ul>
+        </div>
+
+        <!-- Zahnersatz -->
+        <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-6">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Zahnersatz (Prothetik)</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Funktion und Ästhetik bei Zahnverlust</p>
+            </div>
+          </div>
+          
+          <!-- Feste Lösungen -->
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-bold text-dental-blue mb-3">Feste Lösungen:</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Kronen bei stark zerstörten Zähnen</li>
+              <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Brücken zur Versorgung von Zahnlücken</li>
+              <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Implantate als langlebige Alternative zu Brücken und Prothesen</li>
+            </ul>
+          </div>
+
+          <!-- Herausnehmbarer Zahnersatz -->
           <div>
-            <img src="images/team/za.png" 
-              alt="Zahnarzt Team" 
-              class="w-full h-64 object-cover rounded-lg shadow-md">
-          </div>
-          <div class="space-y-4">
-            <p class="text-gray-700 leading-relaxed text-lg">
-              Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Andrea und Oliver Brix 
-              eine umfassende zahnmedizinische Betreuung für die ganze Familie.
-            </p>
+            <h3 class="text-lg md:text-xl font-bold text-dental-blue mb-3">Herausnehmbarer Zahnersatz:</h3>
+            <div class="ml-4">
+              <p class="font-semibold text-gray-700 mb-2">Teilprothesen bei mehreren fehlenden Zähnen:</p>
+              <ul class="space-y-2 text-gray-700 ml-4 mb-4">
+                <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Modellgussprothesen (Basisversorgung)</li>
+                <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Teleskopprothesen (besserer Halt, langlebiger)</li>
+                <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Kombinationsarbeiten mit Geschiebe oder Riegel (ästhetisch und funktional)</li>
+              </ul>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Totalprothesen bei komplett zahnlosem Kiefer (mit oder ohne Implantate für besseren Halt)</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <!-- Implantologie -->
+        <div class="bg-white border border-gray-200 p-4 md:p-8 rounded-lg">
+          <div class="flex items-center gap-3 md:gap-4 mb-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-white rounded-full"></div>
+            </div>
+            <div>
+              <h2 class="text-lg md:text-2xl font-bold text-dental-blue">Implantologie</h2>
+              <p class="text-sm md:text-lg text-gray-600 font-semibold">Moderner Zahnersatz – fest wie ein eigener Zahn</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Einzelzahnimplantate, Brückenersatz oder Stabilisierung von Prothesen</li>
+            <li class="flex items-start"><span class="text-dental-green mr-2 mt-1">•</span> Voraussetzung: gutes Knochenangebot und exzellente Mundhygiene</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Photo Carousel Section - CABINET ENSUITE -->
-  <section class="py-12 bg-gray-50">
+  <!-- Contact Section -->
+  <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere moderne Praxis</h2>
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Haben Sie Fragen zu unseren Leistungen?</h2>
         
-        <!-- Carousel Container - Version corrigée -->
-        <div class="carousel-container relative w-full rounded-lg overflow-hidden shadow-lg">
-          
-          <!-- Radio buttons cachés pour contrôler le carousel -->
-          <input type="radio" name="carousel" id="slide-1" class="carousel-radio" checked>
-          <input type="radio" name="carousel" id="slide-2" class="carousel-radio">
-          <input type="radio" name="carousel" id="slide-3" class="carousel-radio">
-          
-          <!-- Slides Container -->
-          <div class="carousel-slides">
-            
-            <!-- Room 1 -->
-            <div class="carousel-slide">
-              <img src="images/room1.png"
-                alt="Behandlungsraum 1 - Moderne Zahnarztpraxis"
-                class="carousel-image" />
+        <div class="bg-gradient-to-r from-dental-blue to-dental-teal text-white p-8 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Wir beraten Sie gerne ausführlich</h3>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:0390444113" class="bg-white text-dental-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              03904 44113
+            </a>
+            <div class="text-sm opacity-90">
+              <p>Dammühlenweg 13</p>
+              <p>39340 Haldensleben</p>
             </div>
-            
-            <!-- Room 2 -->
-            <div class="carousel-slide">
-              <img src="images/room2.png"
-                alt="Behandlungsraum 2 - Moderne Zahnarztpraxis"
-                class="carousel-image" />
-            </div>
-            
-            <!-- Room 3 -->
-            <div class="carousel-slide">
-              <img src="images/room3.png"
-                alt="Behandlungsraum 3 - Moderne Zahnarztpraxis"
-                class="carousel-image" />
-            </div>
-            
           </div>
-          
-          <!-- Flèches de navigation -->
-          <!-- Flèche précédente (visible sauf sur slide 1) -->
-          <label for="slide-1" class="carousel-arrow carousel-prev carousel-prev-2">‹</label>
-          <label for="slide-2" class="carousel-arrow carousel-prev carousel-prev-3">‹</label>
-          
-          <!-- Flèche suivante (visible sauf sur slide 3) -->
-          <label for="slide-2" class="carousel-arrow carousel-next carousel-next-1">›</label>
-          <label for="slide-3" class="carousel-arrow carousel-next carousel-next-2">›</label>
-          
-          <!-- Navigation Dots -->
-          <div class="carousel-nav">
-            <label for="slide-1" class="carousel-dot dot-1"></label>
-            <label for="slide-2" class="carousel-dot dot-2"></label>
-            <label for="slide-3" class="carousel-dot dot-3"></label>
-          </div>
-    </div>
-  </section>
-
-<!-- Grid Leistungen + Team -->
-<section class="py-12 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      
-      <!-- Leistungen Card -->
-      <div class="bg-white shadow-lg rounded-2xl p-8 text-center space-y-6 border-l-4 border-dental-blue">
-        <div class="text-6xl mb-4">🦷</div>
-        <div>
-          <h3 class="text-2xl font-bold text-dental-blue mb-4">Unsere Leistungen</h3>
-          <p class="text-gray-600 mb-8">
-            Von Prophylaxe bis Zahnersatz – entdecken Sie unser komplettes Behandlungsspektrum für Ihre Zahngesundheit.
-          </p>
         </div>
-        <a href="leistungen.html" 
-           class="inline-flex items-center justify-center w-full px-6 py-3 bg-dental-blue text-white text-lg font-semibold rounded-xl hover:bg-blue-700 transition">
-          Alle Leistungen entdecken →
-        </a>
-      </div>
-
-      <!-- Team Card -->
-      <div class="bg-white shadow-lg rounded-2xl p-8 text-center space-y-6 border-l-4 border-dental-teal">
-        <div class="text-6xl mb-4">👨‍⚕️👩‍⚕️</div>
-        <div>
-          <h3 class="text-2xl font-bold text-dental-teal mb-4">Unser Team</h3>
-          <p class="text-gray-600 mb-8">
-            Lernen Sie unser erfahrenes Team kennen – Andrea & Oliver Brix und unsere kompetenten Mitarbeiterinnen.
-          </p>
-        </div>
-        <a href="team.html" 
-           class="inline-flex items-center justify-center w-full px-6 py-3 bg-dental-teal text-white text-lg font-semibold rounded-xl hover:bg-cyan-700 transition">
-          Unser Team kennenlernen →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Call to Action Section -->
-  <section class="py-16 bg-gradient-to-r from-dental-green to-emerald-600 text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Vereinbaren Sie Ihren Termin</h2>
-      <p class="text-xl mb-8 opacity-90">Wir freuen uns auf Ihren Besuch in unserer Praxis!</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-        <a href="tel:0390444113" 
-           class="bg-white text-dental-green px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition flex items-center justify-center">
-          📞 Jetzt anrufen
-        </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
-           target="_blank"
-           class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition flex items-center justify-center">
-          📍 Anfahrt
-        </a>
       </div>
     </div>
   </section>
@@ -451,12 +243,14 @@
             (Althaldensleben)
           </p>
         </div>
+        
         <div>
           <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
           <p class="text-gray-300 text-sm">
-            📞 <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
+            <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
           </p>
         </div>
+        
         <div>
           <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
           <p class="text-gray-300 text-sm">
@@ -465,6 +259,7 @@
           </p>
         </div>
       </div>
+      
       <div class="border-t border-gray-700 mt-8 pt-8 text-center">
         <p class="text-gray-400 text-sm">&copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.</p>
       </div>
@@ -472,72 +267,12 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Auto-rotate carousel every 5 seconds
-    let currentSlide = 1;
-    const totalSlides = 3;
-    
-    setInterval(() => {
-      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
-      document.getElementById(`slide-${currentSlide}`).checked = true;
-    }, 5000);
-
-    // Support pour swipe sur mobile (optionnel)
-    let startX, endX;
-    const carousel = document.querySelector('.carousel-container');
-    
-    if (carousel) {
-      carousel.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      });
-      
-      carousel.addEventListener('touchend', e => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-      });
-      
-      function handleSwipe() {
-        const threshold = 50;
-        const diff = startX - endX;
-        
-        if (Math.abs(diff) > threshold) {
-          if (diff > 0) {
-            // Swipe left - next slide
-            if (currentSlide < totalSlides) {
-              currentSlide++;
-              document.getElementById(`slide-${currentSlide}`).checked = true;
-            }
-          } else {
-            // Swipe right - previous slide
-            if (currentSlide > 1) {
-              currentSlide--;
-              document.getElementById(`slide-${currentSlide}`).checked = true;
-            }
-          }
-        }
-      }
     }
   </script>
 </body>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zahnarztpraxis Brix</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -130,6 +131,17 @@
     #slide-2:checked ~ .carousel-next-3,
     #slide-3:checked ~ .carousel-next-1,
     #slide-3:checked ~ .carousel-next-2 { display: none; }
+
+    /* Placeholder pour les images manquantes */
+    .placeholder-img {
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -139,15 +151,21 @@
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
-          <a href="index.html">
-            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
+          <a href="#" class="flex items-center space-x-3">
+            <div class="w-16 h-16 bg-dental-blue text-white rounded-full flex items-center justify-center text-2xl font-bold">
+              🦷
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-dental-blue">Zahnarztpraxis Brix</h1>
+              <p class="text-sm text-gray-600">Einfach gesund lächeln</p>
+            </div>
           </a>
         </div>
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
-          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
-          <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+          <a href="#" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
+          <a href="#" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+          <a href="#" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
         </nav>
         <!-- Call Button -->
         <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
@@ -162,9 +180,9 @@
       </div>
       <!-- Mobile Navigation -->
       <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-        <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
-        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
-        <a href="team.html" class="block py-2 text-gray-700">Team</a>
+        <a href="#" class="block py-2 text-dental-blue font-semibold">Home</a>
+        <a href="#" class="block py-2 text-gray-700">Leistungen</a>
+        <a href="#" class="block py-2 text-gray-700">Team</a>
       </nav>
     </div>
   </header>
@@ -241,14 +259,18 @@
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Willkommen in unserer Praxis</h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <img src="images/team/za.png" 
-              alt="Zahnarzt Team" 
-              class="w-full h-64 object-cover rounded-lg shadow-md">
+            <div class="w-full h-64 placeholder-img rounded-lg shadow-md">
+              👨‍⚕️👩‍⚕️ Dr. Andrea & Dr. Oliver Brix
+            </div>
           </div>
           <div class="space-y-4">
-            <p class="text-gray-700 leading-relaxed">
+            <p class="text-gray-700 leading-relaxed text-lg">
               Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Dr. Andrea und Dr. Oliver Brix 
               eine umfassende zahnmedizinische Betreuung für die ganze Familie.
+            </p>
+            <p class="text-gray-600">
+              Unsere moderne Praxis in Haldensleben vereint bewährte Behandlungsmethoden mit neuester Technologie 
+              für Ihren Komfort und beste Behandlungsergebnisse.
             </p>
           </div>
         </div>
@@ -275,9 +297,9 @@
             
             <!-- Room 1 -->
             <div class="carousel-slide">
-              <img src="images/room1.png"
-                alt="Behandlungsraum 1 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
+              <div class="w-full h-full placeholder-img">
+                🏥 Behandlungsraum 1
+              </div>
               <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
                 Behandlungsraum 1
               </div>
@@ -285,9 +307,9 @@
             
             <!-- Room 2 -->
             <div class="carousel-slide">
-              <img src="images/room2.png"
-                alt="Behandlungsraum 2 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
+              <div class="w-full h-full placeholder-img">
+                🦷 Behandlungsraum 2
+              </div>
               <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
                 Behandlungsraum 2
               </div>
@@ -295,9 +317,9 @@
             
             <!-- Room 3 -->
             <div class="carousel-slide">
-              <img src="images/room3.png"
-                alt="Behandlungsraum 3 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
+              <div class="w-full h-full placeholder-img">
+                ⚕️ Behandlungsraum 3
+              </div>
               <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
                 Behandlungsraum 3
               </div>
@@ -329,38 +351,71 @@
   </section>
 
   <!-- Grid Leistungen + Team -->
-  <section class="py-12 bg-gray-50">
+  <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         
         <!-- Leistungen Card -->
-        <div class="bg-white shadow-md rounded-2xl p-8 text-center space-y-6">
+        <div class="bg-white shadow-lg rounded-2xl p-8 text-center space-y-6 border-l-4 border-dental-blue">
+          <div class="text-6xl mb-4">🦷</div>
           <div>
             <h3 class="text-2xl font-bold text-dental-blue mb-4">Unsere Leistungen</h3>
             <p class="text-gray-600 mb-6">
               Von Prophylaxe bis Zahnersatz – entdecken Sie unser komplettes Behandlungsspektrum für Ihre Zahngesundheit.
             </p>
+            <ul class="text-sm text-gray-600 space-y-2 text-left mb-6">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Prophylaxe & Zahnreinigung</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Füllungstherapie</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Wurzelbehandlung</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Zahnersatz & Prothetik</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Parodontitisbehandlung</li>
+            </ul>
           </div>
-          <a href="leistungen.html" 
+          <a href="#" 
              class="inline-flex items-center justify-center w-full px-6 py-3 bg-dental-blue text-white text-lg font-semibold rounded-xl hover:bg-blue-700 transition">
             Alle Leistungen entdecken →
           </a>
         </div>
 
         <!-- Team Card -->
-        <div class="bg-white shadow-md rounded-2xl p-8 text-center space-y-6">
+        <div class="bg-white shadow-lg rounded-2xl p-8 text-center space-y-6 border-l-4 border-dental-teal">
+          <div class="text-6xl mb-4">👨‍⚕️👩‍⚕️</div>
           <div>
             <h3 class="text-2xl font-bold text-dental-teal mb-4">Unser Team</h3>
             <p class="text-gray-600 mb-6">
               Lernen Sie unser erfahrenes Team kennen – Dr. Andrea & Dr. Oliver Brix und unsere kompetenten Mitarbeiterinnen.
             </p>
+            <div class="text-sm text-gray-600 space-y-2 mb-6">
+              <p><strong>Dr. Andrea Brix</strong> - Zahnärztin</p>
+              <p><strong>Dr. Oliver Brix</strong> - Zahnarzt</p>
+              <p class="text-xs text-gray-500 mt-2">+ Qualifiziertes Assistenzteam</p>
+            </div>
           </div>
-          <a href="team.html" 
+          <a href="#" 
              class="inline-flex items-center justify-center w-full px-6 py-3 bg-dental-teal text-white text-lg font-semibold rounded-xl hover:bg-cyan-700 transition">
             Unser Team kennenlernen →
           </a>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-16 bg-gradient-to-r from-dental-green to-emerald-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Vereinbaren Sie Ihren Termin</h2>
+      <p class="text-xl mb-8 opacity-90">Wir freuen uns auf Ihren Besuch in unserer Praxis!</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+        <a href="tel:0390444113" 
+           class="bg-white text-dental-green px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition flex items-center justify-center">
+          📞 Jetzt anrufen
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
+           target="_blank"
+           class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition flex items-center justify-center">
+          📍 Anfahrt
+        </a>
       </div>
     </div>
   </section>
@@ -380,7 +435,7 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
           <p class="text-gray-300 text-sm">
-            📞 <a href="tel:0390444113" class="hover:text-white">0390444113</a><br>
+            📞 <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
           </p>
         </div>
         <div>
@@ -420,6 +475,15 @@
         }
       });
     });
+
+    // Auto-rotate carousel every 5 seconds
+    let currentSlide = 1;
+    const totalSlides = 3;
+    
+    setInterval(() => {
+      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+      document.getElementById(`slide-${currentSlide}`).checked = true;
+    }, 5000);
   </script>
 </body>
 </html>

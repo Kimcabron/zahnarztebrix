@@ -202,39 +202,38 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <a href="index.html">
-            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
-          </a>
-        </div>
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
-          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
-          <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
-        </nav>
-        <!-- Call Button -->
-        <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
-          📞 03904 44113
-        </a>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-      <!-- Mobile Navigation -->
-      <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-        <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
-        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
-        <a href="team.html" class="block py-2 text-gray-700">Team</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Header classique et efficace : logo à gauche, navigation au centre, numéro à droite -->
+<header class="bg-white shadow-md fixed w-full top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo à gauche -->
+    <a href="index.html" class="flex items-center flex-shrink-0">
+      <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
+    </a>
+    <!-- Navigation au centre (cachée sur mobile) -->
+    <nav class="hidden md:flex flex-1 justify-center space-x-6">
+      <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
+      <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+      <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+    </nav>
+    <!-- Numéro à droite, toujours sur une ligne -->
+    <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base whitespace-nowrap ml-2">
+      📞 03904 44113
+    </a>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden ml-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile Navigation -->
+  <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 px-4">
+    <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
+    <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+    <a href="team.html" class="block py-2 text-gray-700">Team</a>
+    <a href="tel:0390444113" class="block py-2 text-dental-blue font-semibold whitespace-nowrap">📞 03904 44113</a>
+  </nav>
+</header>
   <!-- Spacer responsive pour compenser la hauteur du header -->
   <div class="h-20 md:h-24"></div>
 

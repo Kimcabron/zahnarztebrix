@@ -18,186 +18,443 @@
       }
     }
   </script>
+  <style>
+    /* ✅ CSS OPTIMISATION LOGO */
+    .logo-optimized {
+      image-rendering: -webkit-optimize-contrast !important;
+      image-rendering: crisp-edges !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      transform: translateZ(0) !important;
+      will-change: transform !important;
+      backface-visibility: hidden !important;
+      filter: contrast(1.1) brightness(1.02) !important;
+    }
+
+    /* Tailles optimales pour logo sans espaces blancs */
+    @media (max-width: 640px) {
+      .logo-optimized {
+        max-height: 48px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .logo-optimized {
+        max-height: 56px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .logo-optimized {
+        max-height: 64px !important;
+        width: auto;
+      }
+    }
+
+    /* ✅ AMÉLIORATIONS UX MOBILE - BEST PRACTICES iOS */
+    
+    /* Boutons touch-friendly minimum 44px */
+    .mobile-button {
+      min-height: 44px !important;
+      padding: 12px 16px !important;
+    }
+    
+    /* Menu hamburger plus accessible */
+    .mobile-menu-btn {
+      min-width: 44px !important;
+      min-height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Section spacing plus généreux */
+    .mobile-section {
+      padding: 16px 0 !important;
+    }
+
+    /* ✅ OPTIMISATIONS HEADER POUR IPHONE */
+    
+    /* Support des safe areas iPhone (encoche, Dynamic Island) */
+    header {
+      padding-top: env(safe-area-inset-top) !important;
+      min-height: 64px !important;
+    }
+    
+    /* Hauteur adaptative du spacer selon l'appareil */
+    .header-spacer {
+      height: calc(64px + env(safe-area-inset-top)) !important;
+    }
+    
+    @media (min-width: 768px) {
+      .header-spacer {
+        height: calc(80px + env(safe-area-inset-top)) !important;
+      }
+    }
+    
+    /* Padding header plus généreux sur mobile */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 12px 16px !important;
+      }
+    }
+
+    /* ✅ STYLES SPÉCIFIQUES DATENSCHUTZ */
+    .datenschutz-content {
+      line-height: 1.7;
+    }
+    
+    .datenschutz-content h2 {
+      color: #2d3748;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .datenschutz-content h2:first-of-type {
+      margin-top: 0;
+    }
+    
+    .datenschutz-content h3 {
+      color: #4a5568;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .datenschutz-content p {
+      margin-bottom: 1rem;
+    }
+    
+    .datenschutz-content ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    .datenschutz-content li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .datenschutz-content a {
+      color: #3182ce;
+      text-decoration: none;
+    }
+    
+    .datenschutz-content a:hover {
+      text-decoration: underline;
+    }
+    
+    .info-box {
+      background: #f7fafc;
+      border-left: 4px solid #3182ce;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .warning-box {
+      background: #fef5e7;
+      border-left: 4px solid #f6ad55;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <!-- Header -->
+
+  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
+    <div class="container mx-auto px-3 py-3 md:py-2 header-container">
+      
+      <!-- Mobile Layout prioritaire -->
+      <div class="flex items-center justify-between">
+        
+        <!-- ✅ Logo adaptatif OPTIMISÉ -->
+        <div class="flex items-center flex-shrink-0">
           <a href="index.html">
-            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
+            <img src="images/logo3.png" 
+                 alt="Zahnarztpraxis Brix" 
+                 class="logo-optimized h-12 sm:h-14 md:h-16 w-auto object-contain"
+                 width="1208" 
+                 height="388"
+                 loading="eager" />
           </a>
         </div>
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
-          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
-          <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
-        </nav>
-        <!-- Call Button -->
-        <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
-          📞 03904 44113
-        </a>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+
+        <!-- Mobile: Call + Menu -->
+        <div class="flex items-center gap-2 md:hidden">
+          <a href="tel:0390444113" 
+             class="bg-dental-blue text-white px-3 py-2 rounded-lg font-semibold text-sm flex items-center gap-1 hover:bg-blue-700 transition-colors mobile-button">
+            📞 <span class="hidden xs:inline">Anrufen</span>
+          </a>
+          
+          <button id="mobile-menu-btn" class="mobile-menu-btn p-2">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop: Navigation centrée + Call Button -->
+        <div class="hidden md:flex items-center justify-between flex-1 ml-8">
+          <!-- Navigation centrée -->
+          <div class="flex-1 flex justify-center">
+            <nav class="flex space-x-8">
+              <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Home</a>
+              <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Leistungen</a>
+              <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Team</a>
+            </nav>
+          </div>
+          
+          <!-- Call button à droite -->
+          <a href="tel:0390444113" 
+             class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold whitespace-nowrap">
+            📞 03904 44113
+          </a>
+        </div>
       </div>
-      <!-- Mobile Navigation -->
-      <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-        <a href="index.html" class="block py-2 text-gray-700">Home</a>
-        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
-        <a href="team.html" class="block py-2 text-gray-700">Team</a>
+
+      <!-- Menu mobile optimisé -->
+      <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 mt-2 pt-2">
+        <div class="flex flex-col space-y-1">
+          <a href="index.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            🏠 Home
+          </a>
+          <a href="leistungen.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            🦷 Leistungen
+          </a>
+          <a href="team.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            👨‍⚕️ Team
+          </a>
+          
+          <!-- Quick contact dans le menu mobile -->
+          <div class="border-t border-gray-200 mt-2 pt-3">
+            <div class="py-2 px-2 text-xs text-gray-600">
+              <div class="font-semibold mb-1">📍 Schnell erreichen:</div>
+              <div class="flex gap-3 mt-3">
+                <a href="tel:0390444113" class="mobile-button bg-dental-blue text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  📞 Anrufen
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
+                   target="_blank" class="mobile-button bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  📍 Route
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- Spacer responsive pour compenser la hauteur du header -->
-  <div class="h-24 md:h-28"></div>
+  <!-- Spacer adaptatif avec support safe areas -->
+  <div class="header-spacer"></div>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-12 md:py-16">
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-12 mobile-section">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4">Datenschutzerklärung</h1>
-        <p class="text-lg opacity-90">Schutz Ihrer persönlichen Daten</p>
+        <h1 class="text-2xl md:text-4xl font-bold mb-4">Datenschutzerklärung</h1>
+        <p class="text-base md:text-lg opacity-90">
+          Informationen zum Schutz Ihrer personenbezogenen Daten
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Content Section -->
-  <section class="py-12 md:py-16 bg-white">
+  <section class="py-8 md:py-12 bg-white mobile-section">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        
-        <!-- Datenschutz Haupttext -->
-        <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg mb-8">
-          <h2 class="text-2xl font-bold text-dental-blue mb-6">Datenschutz</h2>
-          
-          <div class="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-            </p>
-            
-            <p>
-              Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-            </p>
-            
-            <p>
-              Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
-            </p>
-          </div>
+
+        <!-- Information Box -->
+        <div class="info-box">
+          <h2 class="text-xl font-bold text-dental-blue mb-4">Datenschutz im Überblick</h2>
+          <p class="mb-3">
+            Nachfolgend erhalten Sie Informationen über die Erhebung personenbezogener Daten bei Nutzung unserer Internetseite. 
+            Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind (z.B. Name, Adresse, E-Mail-Adressen, IP-Adresse).
+          </p>
+          <p class="text-sm text-gray-600">
+            <strong>Stand:</strong> Juni 2025 | 
+            <strong>Gültig für:</strong> www.zahnarztpraxis-brix.de
+          </p>
         </div>
 
-        <!-- Google Analytics Section -->
-        <div class="bg-gray-50 p-6 md:p-8 rounded-lg">
-          <h2 class="text-2xl font-bold text-dental-blue mb-6">Datenschutzerklärung für die Nutzung von Google Analytics</h2>
-          
-          <div class="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google"). Google Analytics verwendet sog. „Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt.
-            </p>
-            
-            <p>
-              Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen. Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.
-            </p>
-            
-            <div class="bg-dental-blue/10 p-4 rounded-lg">
-              <p class="font-semibold text-dental-blue mb-2">Wichtiger Hinweis zu Cookies:</p>
-              <p>
-                Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
-              </p>
-              <a href="http://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" class="text-dental-blue hover:text-dental-teal font-semibold underline">
-                Google Analytics Opt-out Browser-Plugin
-              </a>
-            </div>
-          </div>
-        </div>
+        <!-- Main Content -->
+        <div class="datenschutz-content">
 
-        <!-- Quellenangaben -->
-        <div class="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
-          <p class="font-semibold mb-2">Quellenangaben:</p>
+          <h2>1. Name und Kontaktdaten des Verantwortlichen</h2>
+          <p><strong>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <p>
+              <strong>Zahnarztpraxis Brix</strong><br>
+              Zahnärzte Andrea und Oliver Brix<br>
+              Dammühlenweg 13<br>
+              39340 Haldensleben (Althaldensleben)<br>
+              Deutschland
+            </p>
+            <p class="mt-2">
+              <strong>Telefon:</strong> 03904 44113<br>
+              <strong>Telefax:</strong> 03904 710781
+            </p>
+          </div>
+
+          <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+          
+          <h3>Umfang der Verarbeitung personenbezogener Daten</h3>
           <p>
-            Datenschutzerklärung von eRecht24, dem Portal zum Internetrecht von Rechtsanwalt Sören Siebert, Datenschutzerklärung für Google Analytics
+            Wir erheben und verwenden personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Erhebung und Verwendung personenbezogener Daten unserer Nutzer erfolgt regelmäßig nur nach Einwilligung des Nutzers. Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.
           </p>
-        </div>
 
-        <!-- Navigation zurück -->
-        <div class="mt-8 text-center">
-          <a href="index.html" class="inline-flex items-center text-dental-blue hover:text-dental-teal font-semibold">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            Zurück zur Startseite
-          </a>
-        </div>
+          <h3>Rechtsgrundlage für die Verarbeitung personenbezogener Daten</h3>
+          <p>Soweit wir für Verarbeitungsvorgänge personenbezogener Daten eine Einwilligung der betroffenen Person einholen, dient Art. 6 Abs. 1 lit. a EU-Datenschutzgrundverordnung (DSGVO) als Rechtsgrundlage.</p>
+          <p>Bei der Verarbeitung von personenbezogenen Daten, die zur Erfüllung eines Vertrages, dessen Vertragspartei die betroffene Person ist, erforderlich ist, dient Art. 6 Abs. 1 lit. b DSGVO als Rechtsgrundlage.</p>
+          <p>Ist die Verarbeitung zur Wahrung eines berechtigten Interesses unserer Praxis oder eines Dritten erforderlich und überwiegen die Interessen, Grundrechte und Grundfreiheiten des Betroffenen das erstgenannte Interesse nicht, so dient Art. 6 Abs. 1 lit. f DSGVO als Rechtsgrundlage für die Verarbeitung.</p>
 
-      </div>
-    </div>
-  </section>
+          <h3>Datenlöschung und Speicherdauer</h3>
+          <p>
+            Die personenbezogenen Daten der betroffenen Person werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt. Eine Speicherung kann darüber hinaus erfolgen, wenn dies durch den europäischen oder nationalen Gesetzgeber in unionsrechtlichen Verordnungen, Gesetzen oder sonstigen Vorschriften, denen der Verantwortliche unterliegt, vorgesehen wurde. Eine Sperrung oder Löschung der Daten erfolgt auch dann, wenn eine durch die genannten Normen vorgeschriebene Speicherfrist abläuft, es sei denn, dass eine Erforderlichkeit zur weiteren Speicherung der Daten für einen Vertragsabschluss oder eine Vertragserfüllung besteht.
+          </p>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Zahnarztpraxis Brix</h3>
-          <p class="text-gray-300 text-sm">
-            Dammühlenweg 13<br>
-            39340 Haldensleben<br>
-            (Althaldensleben)
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
-          <p class="text-gray-300 text-sm">
-            <a href="tel:0390444113" class="hover:text-white">03904 44113</a><br>
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
-          <p class="text-gray-300 text-sm">
-            Mo-Mi: 08:00-12:00, 14:00-18:00<br>
-            Do-Fr: 08:00-12:00
-          </p>
-        </div>
-      </div>
-      
-      <!-- Section légale avec liens -->
-      <div class="border-t border-gray-700 mt-8 pt-8">
-        <div class="flex flex-col sm:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm mb-4 sm:mb-0">
-            &copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.
-          </p>
+          <h2>3. Bereitstellung der Website und Erstellung von Logfiles</h2>
           
-          <!-- Liens légaux -->
-          <div class="flex space-x-4 text-sm">
-            <a href="impressum.html" class="text-gray-400 hover:text-white transition-colors">
-              Impressum
-            </a>
-            <span class="text-gray-600">|</span>
-            <a href="datenschutz.html" class="text-gray-400 hover:text-white transition-colors">
-              Datenschutz
+          <h3>Beschreibung und Umfang der Datenverarbeitung</h3>
+          <p>Bei jedem Aufruf unserer Internetseite erfasst unser System automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners.</p>
+          
+          <p><strong>Folgende Daten werden hierbei erhoben:</strong></p>
+          <ul>
+            <li>Informationen über den Browsertyp und die verwendete Version</li>
+            <li>Das Betriebssystem des Nutzers</li>
+            <li>Den Internet-Service-Provider des Nutzers</li>
+            <li>Die IP-Adresse des Nutzers</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>Websites, von denen das System des Nutzers auf unsere Internetseite gelangt</li>
+            <li>Websites, die vom System des Nutzers über unsere Website aufgerufen werden</li>
+          </ul>
+
+          <p>Die Daten werden ebenfalls in den Logfiles unseres Systems gespeichert. Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzers findet nicht statt.</p>
+
+          <h3>Rechtsgrundlage für die Datenverarbeitung</h3>
+          <p>Rechtsgrundlage für die vorübergehende Speicherung der Daten und der Logfiles ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+          <h3>Zweck der Datenverarbeitung</h3>
+          <p>Die vorübergehende Speicherung der IP-Adresse durch das System ist notwendig, um eine Auslieferung der Website an den Rechner des Nutzers zu ermöglichen. Hierfür muss die IP-Adresse des Nutzers für die Dauer der Sitzung gespeichert bleiben.</p>
+
+          <h3>Dauer der Speicherung</h3>
+          <p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Im Falle der Erfassung der Daten zur Bereitstellung der Website ist dies der Fall, wenn die jeweilige Sitzung beendet ist.</p>
+
+          <h2>4. Verwendung von Cookies</h2>
+          
+          <h3>Beschreibung und Umfang der Datenverarbeitung</h3>
+          <p>Unsere Website verwendet Cookies. Bei Cookies handelt es sich um Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Ruft ein Nutzer eine Website auf, so kann ein Cookie auf dem Betriebssystem des Nutzers gespeichert werden. Dieser Cookie enthält eine charakteristische Zeichenfolge, die eine eindeutige Identifizierung des Browsers beim erneuten Aufrufen der Website ermöglicht.</p>
+
+          <p><strong>Wir setzen Cookies ein, um:</strong></p>
+          <ul>
+            <li>die Nutzung unserer Website statistisch zu erfassen und zum Zwecke der Optimierung unseres Angebotes für Sie auszuwerten (siehe Google Analytics)</li>
+            <li>unsere Website nutzerfreundlicher zu gestalten</li>
+          </ul>
+
+          <h3>Rechtsgrundlage für die Datenverarbeitung</h3>
+          <p>Die Rechtsgrundlage für die Verarbeitung personenbezogener Daten unter Verwendung von Cookies ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+          <h3>Zweck der Datenverarbeitung</h3>
+          <p>Der Zweck der Verwendung technisch notwendiger Cookies ist, die Nutzung von Websites für die Nutzer zu vereinfachen. Einige Funktionen unserer Internetseite können ohne den Einsatz von Cookies nicht angeboten werden.</p>
+
+          <h3>Widerspruchs- und Beseitigungsmöglichkeit</h3>
+          <p>Cookies werden auf dem Rechner des Nutzers gespeichert und von diesem an unserer Seite übermittelt. Daher haben Sie als Nutzer auch die volle Kontrolle über die Verwendung von Cookies. Durch eine Änderung der Einstellungen in Ihrem Internetbrowser können Sie die Übertragung von Cookies deaktivieren oder einschränken. Bereits gespeicherte Cookies können jederzeit gelöscht werden. Dies kann auch automatisiert erfolgen. Werden Cookies für unsere Website deaktiviert, können möglicherweise nicht mehr alle Funktionen der Website vollumfänglich genutzt werden.</p>
+
+          <h2>5. Google Analytics</h2>
+          
+          <div class="warning-box">
+            <h3 class="text-orange-700 font-semibold mb-2">⚠️ Wichtiger Hinweis zu Google Analytics</h3>
+            <p class="text-orange-700">
+              Diese Website benutzt Google Analytics, einen Webanalysedienst der Google LLC. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.
+            </p>
+          </div>
+
+          <h3>Umfang der Verarbeitung personenbezogener Daten</h3>
+          <p>Wir verwenden auf unserer Website Google Analytics. Anbieter ist die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
+
+          <p>Google Analytics verwendet so genannte "Cookies". Das sind Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
+
+          <h3>IP-Anonymisierung</h3>
+          <p>Wir haben auf dieser Website die Funktion IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum vor der Übertragung in die USA gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.</p>
+
+          <h3>Zweck der Datenverarbeitung</h3>
+          <p>Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
+
+          <h3>Rechtsgrundlage für die Datenverarbeitung</h3>
+          <p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+          <h3>Widerspruchsmöglichkeit</h3>
+          <p>Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
+          
+          <p>Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:</p>
+          
+          <div class="bg-dental-blue/10 p-4 rounded-lg my-4">
+            <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" class="text-dental-blue hover:text-dental-teal font-semibold underline">
+              🔗 Google Analytics Opt-out Browser-Plugin herunterladen
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  </script>
-</body>
-</html>
+          <h2>6. Rechte der betroffenen Person</h2>
+          
+          <p>Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:</p>
+
+          <h3>Auskunftsrecht</h3>
+          <p>Sie können von dem Verantwortlichen eine Bestätigung darüber verlangen, ob personenbezogene Daten, die Sie betreffen, von uns verarbeitet werden.</p>
+
+          <h3>Recht auf Berichtigung</h3>
+          <p>Sie haben ein Recht auf Berichtigung und/oder Vervollständigung gegenüber dem Verantwortlichen, sofern die verarbeiteten personenbezogenen Daten, die Sie betreffen, unrichtig oder unvollständig sind.</p>
+
+          <h3>Recht auf Löschung</h3>
+          <p>Sie können von dem Verantwortlichen verlangen, dass die Sie betreffenden personenbezogenen Daten unverzüglich gelöscht werden, und der Verantwortliche ist verpflichtet, diese Daten unverzüglich zu löschen, sofern einer der gesetzlichen Löschungsgründe zutrifft.</p>
+
+          <h3>Recht auf Einschränkung der Verarbeitung</h3>
+          <p>Unter den gesetzlichen Voraussetzungen können Sie die Einschränkung der Verarbeitung der Sie betreffenden personenbezogenen Daten verlangen.</p>
+
+          <h3>Recht auf Datenübertragbarkeit</h3>
+          <p>Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, die Sie dem Verantwortlichen bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</p>
+
+          <h3>Widerspruchsrecht</h3>
+          <p>Sie haben das Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.</p>
+
+          <h3>Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung</h3>
+          <p>Sie haben das Recht, Ihre datenschutzrechtliche Einwilligungserklärung jederzeit zu widerrufen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt.</p>
+
+          <h3>Automatisierte Entscheidung im Einzelfall einschließlich Profiling</h3>
+          <p>Sie haben das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung — einschließlich Profiling — beruhenden Entscheidung unterworfen zu werden, die Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt. Dies gilt nicht, wenn die Entscheidung für den Abschluss oder die Erfüllung eines Vertrags zwischen Ihnen und dem Verantwortlichen erforderlich ist.</p>
+
+          <h3>Recht auf Beschwerde bei einer Aufsichtsbehörde</h3>
+          <p>Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.</p>
+
+          <div class="bg-gray-50 p-4 rounded-lg my-4">
+            <p><strong>Zuständige Aufsichtsbehörde für Sachsen-Anhalt:</strong></p>
+            <p>
+              Landesbeauftragter für den Datenschutz Sachsen-Anhalt<br>
+              Leiterstraße 9<br>
+              39104 Magdeburg<br>
+              <a href="https://datenschutz.sachsen-anhalt.de" target="_blank" class="text-dental-blue hover:underline">datenschutz.sachsen-anhalt.de</a>
+            </p>
+          </div>
+
+          <h2>7. Kontakt für Datenschutzfragen</h2>
+          <p>Bei Fragen zum Datenschutz, zur Ausübung Ihrer Rechte oder bei Beschwerden können Sie sich jederzeit an uns wenden:</p>
+          
+          <div class="bg-dental-blue/10 p-4 rounded-lg my-4">
+            <p>
+              <strong>Zahnarztpraxis Brix</strong><br>
+              z.Hd. Datenschutz<br>
+              Dammühlenweg 13<br>
+              39340 Haldensleben<br>
+              Telefon: 03904 44113
+            </p>
+          </div>
+
+          <h2>8. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+          <p>Diese Datenschutzerklärung ist

@@ -128,6 +128,17 @@
       transform: scale(1.02);
       filter: brightness(1.05) contrast(1.1);
     }
+
+    /* ✅ CORRECTION ESPACEMENT TEAM - SOLUTION AU PROBLÈME */
+    .team-section-spaced {
+      padding-top: 3rem !important; /* 48px sur mobile */
+    }
+    
+    @media (min-width: 768px) {
+      .team-section-spaced {
+        padding-top: 4rem !important; /* 64px sur desktop */
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -232,13 +243,17 @@
     </div>
   </section>
 
-  <!-- Team Section -->
-  <section class="py-8 md:py-12 bg-white mobile-section">
+  <!-- ✅ TEAM SECTION AVEC ESPACEMENT CORRIGÉ -->
+  <section class="team-section-spaced py-8 md:py-12 bg-white mobile-section">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
 
         <!-- Zahnärzte Section -->
-        <div class="mb-16">          
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">
+            Unsere Zahnärzte
+          </h2>
+          
           <div class="flex flex-col items-center">
             <div class="w-full max-w-2xl">
               <img src="images/team/za.png"
@@ -264,7 +279,12 @@
           </div>
         </div>
 
-        <!-- Praxisteam Section -->          
+        <!-- Praxisteam Section -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">
+            Unser Praxisteam
+          </h2>
+          
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-8">
             
             <!-- Team Mitglied 1 -->

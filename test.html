@@ -53,6 +53,62 @@
       }
     }
 
+    /* ✅ AMÉLIORATIONS UX MOBILE - BEST PRACTICES iOS */
+    
+    /* Boutons touch-friendly minimum 44px */
+    .mobile-button {
+      min-height: 44px !important;
+      padding: 12px 16px !important;
+    }
+    
+    /* Menu hamburger plus accessible */
+    .mobile-menu-btn {
+      min-width: 44px !important;
+      min-height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Espacement amélioré pour les horaires */
+    @media (max-width: 768px) {
+      .schedule-mobile-item {
+        padding: 16px !important;
+        margin-bottom: 12px !important;
+      }
+    }
+    
+    /* Section spacing plus généreux */
+    .mobile-section {
+      padding: 16px 0 !important;
+    }
+
+    /* ✅ OPTIMISATIONS HEADER POUR IPHONE */
+    
+    /* Support des safe areas iPhone (encoche, Dynamic Island) */
+    header {
+      padding-top: env(safe-area-inset-top) !important;
+      min-height: 64px !important;
+    }
+    
+    /* Hauteur adaptative du spacer selon l'appareil */
+    .header-spacer {
+      height: calc(64px + env(safe-area-inset-top)) !important;
+    }
+    
+    @media (min-width: 768px) {
+      .header-spacer {
+        height: calc(80px + env(safe-area-inset-top)) !important;
+      }
+    }
+    
+    /* Padding header plus généreux sur mobile */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 12px 16px !important;
+      }
+    }
+
     /* Carousel CSS optimisé pour mobile */
     .carousel-container {
       position: relative;
@@ -198,9 +254,9 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ avec LOGO CORRIGÉ -->
+  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ avec safe areas iPhone -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-3 py-2">
+    <div class="container mx-auto px-3 py-3 md:py-2 header-container">
       
       <!-- Mobile Layout prioritaire -->
       <div class="flex items-center justify-between">
@@ -220,11 +276,11 @@
         <!-- Mobile: Call + Menu -->
         <div class="flex items-center gap-2 md:hidden">
           <a href="tel:0390444113" 
-             class="bg-dental-blue text-white px-3 py-2 rounded-lg font-semibold text-sm flex items-center gap-1 hover:bg-blue-700 transition-colors">
+             class="bg-dental-blue text-white px-3 py-2 rounded-lg font-semibold text-sm flex items-center gap-1 hover:bg-blue-700 transition-colors mobile-button">
             📞 <span class="hidden xs:inline">Anrufen</span>
           </a>
           
-          <button id="mobile-menu-btn" class="p-2">
+          <button id="mobile-menu-btn" class="mobile-menu-btn p-2">
             <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -253,13 +309,13 @@
       <!-- Menu mobile optimisé -->
       <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 mt-2 pt-2">
         <div class="flex flex-col space-y-1">
-          <a href="index.html" class="py-3 px-2 text-gray-700 hover:bg-gray-50 rounded">
+          <a href="index.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
             🏠 Home
           </a>
-          <a href="leistungen.html" class="py-3 px-2 text-gray-700 hover:bg-gray-50 rounded">
+          <a href="leistungen.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
             🦷 Leistungen
           </a>
-          <a href="team.html" class="py-3 px-2 text-gray-700 hover:bg-gray-50 rounded">
+          <a href="team.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
             👨‍⚕️ Team
           </a>
           
@@ -267,12 +323,12 @@
           <div class="border-t border-gray-200 mt-2 pt-3">
             <div class="py-2 px-2 text-xs text-gray-600">
               <div class="font-semibold mb-1">📍 Schnell erreichen:</div>
-              <div class="flex gap-2 mt-2">
-                <a href="tel:0390444113" class="bg-dental-blue text-white px-3 py-1 rounded text-xs font-medium">
+              <div class="flex gap-3 mt-3">
+                <a href="tel:0390444113" class="mobile-button bg-dental-blue text-white px-4 py-2 rounded-lg text-sm font-medium">
                   📞 Anrufen
                 </a>
                 <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
-                   target="_blank" class="bg-gray-600 text-white px-3 py-1 rounded text-xs font-medium">
+                   target="_blank" class="mobile-button bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
                   📍 Route
                 </a>
               </div>
@@ -283,28 +339,28 @@
     </div>
   </header>
 
-  <!-- Spacer adaptatif -->
-  <div class="h-16 md:h-20"></div>
+  <!-- Spacer adaptatif avec support safe areas -->
+  <div class="header-spacer"></div>
 
-  <!-- Section horaires optimisée mobile -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-16">
+  <!-- Section horaires optimisée mobile avec UX améliorée -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-16 mobile-section">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         
-        <!-- Horaires - Layout mobile amélioré -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-          <h2 class="text-lg font-semibold mb-4 flex items-center">
+        <!-- Horaires - Layout mobile amélioré avec espacement UX -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <h2 class="text-lg font-semibold mb-6 flex items-center">
             🕒 Öffnungszeiten
           </h2>
           
-          <!-- Version mobile: layout vertical simplifié -->
-          <div class="block md:hidden space-y-3">
-            <div class="bg-white/20 rounded p-3">
-              <div class="font-bold text-sm mb-1">Montag - Mittwoch</div>
+          <!-- Version mobile: layout vertical avec meilleur espacement -->
+          <div class="block md:hidden space-y-4">
+            <div class="bg-white/20 rounded-lg schedule-mobile-item">
+              <div class="font-bold text-base mb-2">Montag - Mittwoch</div>
               <div class="text-sm">08:00-12:00 • 14:00-18:00</div>
             </div>
-            <div class="bg-white/20 rounded p-3">
-              <div class="font-bold text-sm mb-1">Donnerstag - Freitag</div>
+            <div class="bg-white/20 rounded-lg schedule-mobile-item">
+              <div class="font-bold text-base mb-2">Donnerstag - Freitag</div>
               <div class="text-sm">08:00-12:00</div>
             </div>
           </div>
@@ -328,9 +384,9 @@
             </div>
           </div>
           
-          <!-- Notdienst -->
-          <div class="mt-4 pt-3 border-t border-white/30">
-            <p class="text-xs opacity-90">
+          <!-- Notdienst avec meilleur espacement -->
+          <div class="mt-6 pt-4 border-t border-white/30">
+            <p class="text-sm opacity-90 leading-relaxed">
               🚨 Notfälle: 
               <a href="http://www.zbd-boerdekreis.de/seite/294524/hdl.html" 
                  target="_blank" 
@@ -341,20 +397,20 @@
           </div>
         </div>
         
-        <!-- Contact - Mobile optimisé -->
-        <div class="bg-white shadow-md rounded-2xl p-4 text-center space-y-3 max-w-sm mx-auto">
+        <!-- Contact - Mobile optimisé avec boutons UX friendly -->
+        <div class="bg-white shadow-md rounded-2xl p-6 text-center space-y-4 max-w-sm mx-auto">
           <a href="tel:0390444113"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-emerald-600 text-white text-base font-semibold rounded-xl hover:bg-emerald-700 transition">
+            class="mobile-button inline-flex items-center justify-center w-full bg-emerald-600 text-white text-base font-semibold rounded-xl hover:bg-emerald-700 transition">
             📞 Jetzt anrufen
           </a>
           
-          <div class="text-gray-700 text-sm leading-relaxed">
+          <div class="text-gray-700 text-base leading-relaxed py-2">
             <p>Dammühlenweg 13<br>39340 Haldensleben</p>
           </div>
           
           <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
              target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-sky-600 text-white text-base font-semibold rounded-xl hover:bg-sky-700 transition">
+            class="mobile-button inline-flex items-center justify-center w-full bg-sky-600 text-white text-base font-semibold rounded-xl hover:bg-sky-700 transition">
             📍 Route planen
           </a>
         </div>

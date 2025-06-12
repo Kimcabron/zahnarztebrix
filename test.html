@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum - Zahnarztpraxis Brix</title>
+  <title>Zahnarztpraxis Brix - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,6 +19,40 @@
     }
   </script>
   <style>
+    /* ✅ CSS OPTIMISATION LOGO - NOUVEAU */
+    .logo-optimized {
+      image-rendering: -webkit-optimize-contrast !important;
+      image-rendering: crisp-edges !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      transform: translateZ(0) !important;
+      will-change: transform !important;
+      backface-visibility: hidden !important;
+      filter: contrast(1.1) brightness(1.02) !important;
+    }
+
+    /* Tailles optimales pour logo sans espaces blancs */
+    @media (max-width: 640px) {
+      .logo-optimized {
+        max-height: 48px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .logo-optimized {
+        max-height: 56px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .logo-optimized {
+        max-height: 64px !important;
+        width: auto;
+      }
+    }
+
     /* Carousel CSS optimisé pour mobile */
     .carousel-container {
       position: relative;
@@ -164,17 +198,22 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ -->
+  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ avec LOGO CORRIGÉ -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
     <div class="container mx-auto px-3 py-2">
       
       <!-- Mobile Layout prioritaire -->
       <div class="flex items-center justify-between">
         
-        <!-- Logo adaptatif -->
+        <!-- ✅ Logo adaptatif OPTIMISÉ POUR NETTETÉ -->
         <div class="flex items-center flex-shrink-0">
           <a href="index.html">
-            <img src="images/logo3.png" alt="Zahnarztpraxis Brix" class="h-12 w-auto md:h-16" />
+            <img src="images/logo3.png" 
+                 alt="Zahnarztpraxis Brix" 
+                 class="logo-optimized h-12 sm:h-14 md:h-16 w-auto object-contain"
+                 width="1208" 
+                 height="388"
+                 loading="eager" />
           </a>
         </div>
 
@@ -197,9 +236,9 @@
           <!-- Navigation centrée -->
           <div class="flex-1 flex justify-center">
             <nav class="flex space-x-8">
-              <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
-              <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
-              <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
+              <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Home</a>
+              <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Leistungen</a>
+              <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Team</a>
             </nav>
           </div>
           
@@ -341,6 +380,9 @@
               Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Andrea und Oliver Brix 
               eine umfassende zahnmedizinische Betreuung für die ganze Familie.
             </p>
+            <p class="text-gray-600 text-sm md:text-base">
+              Unsere moderne Praxis in Haldensleben verbindet bewährte Behandlungsmethoden mit den neuesten Technologien der Zahnmedizin.
+            </p>
           </div>
         </div>
       </div>
@@ -460,7 +502,8 @@
         <div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
           <p class="text-gray-300 text-sm">
-            <a href="tel:0390444113" class="hover:text-white">03904 44113</a>
+            <a href="tel:0390444113" class="hover:text-white">📞 03904 44113</a><br>
+            <a href="tel:0390444113" class="hover:text-white">📠 03904 710781</a>
           </p>
         </div>
         
@@ -533,7 +576,7 @@
       }
     });
 
-    // Auto-rotate carousel
+    // Auto-rotate carousel (plus lent pour une meilleure UX)
     let currentSlide = 1;
     const totalSlides = 3;
     
@@ -541,7 +584,7 @@
       currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
       const slideElement = document.getElementById(`slide-${currentSlide}`);
       if (slideElement) slideElement.checked = true;
-    }, 5000);
+    }, 6000); // 6 secondes au lieu de 5
 
     // Support swipe mobile
     let startX, endX;
@@ -587,6 +630,17 @@
           });
         }
       });
+    });
+
+    // Console log pour debug logo
+    console.log('🎯 Logo optimisé chargé - vérifiez la netteté !');
+    
+    // Optionnel: forcer le rechargement de l'image si problème persiste
+    window.addEventListener('load', () => {
+      const logoImg = document.querySelector('.logo-optimized');
+      if (logoImg) {
+        console.log('📸 Logo dimensions:', logoImg.naturalWidth + 'x' + logoImg.naturalHeight);
+      }
     });
   </script>
 </body>

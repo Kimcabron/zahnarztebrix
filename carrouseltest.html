@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zahnarztpraxis Brix</title>
+  <title>Zahnarztpraxis Brix - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'dental-blue': '#2563eb',
+            'dental-blue': '#4682B4',
             'dental-teal': '#0891b2',
             'dental-green': '#059669'
           }
@@ -19,21 +19,137 @@
     }
   </script>
   <style>
-    /* Carousel CSS */
+    /* ✅ CSS OPTIMISATION LOGO - NOUVEAU */
+    .logo-optimized {
+      image-rendering: -webkit-optimize-contrast !important;
+      image-rendering: crisp-edges !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      transform: translateZ(0) !important;
+      will-change: transform !important;
+      backface-visibility: hidden !important;
+      filter: contrast(1.1) brightness(1.02) !important;
+    }
+
+    /* Tailles optimales pour logo sans espaces blancs */
+    @media (max-width: 640px) {
+      .logo-optimized {
+        max-height: 48px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .logo-optimized {
+        max-height: 56px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .logo-optimized {
+        max-height: 64px !important;
+        width: auto;
+      }
+    }
+
+    /* ✅ AMÉLIORATIONS UX MOBILE - BEST PRACTICES iOS */
+    
+    /* Boutons touch-friendly minimum 44px */
+    .mobile-button {
+      min-height: 44px !important;
+      padding: 12px 16px !important;
+    }
+    
+    /* Menu hamburger plus accessible */
+    .mobile-menu-btn {
+      min-width: 44px !important;
+      min-height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Espacement amélioré pour les horaires */
+    @media (max-width: 768px) {
+      .schedule-mobile-item {
+        padding: 16px !important;
+        margin-bottom: 12px !important;
+      }
+    }
+    
+    /* Section spacing plus généreux */
+    .mobile-section {
+      padding: 16px 0 !important;
+    }
+
+    /* ✅ OPTIMISATIONS HEADER POUR IPHONE */
+    
+    /* Support des safe areas iPhone (encoche, Dynamic Island) */
+    header {
+      padding-top: env(safe-area-inset-top) !important;
+      min-height: 64px !important;
+    }
+    
+    /* Hauteur adaptative du spacer selon l'appareil */
+    .header-spacer {
+      height: calc(64px + env(safe-area-inset-top)) !important;
+    }
+    
+    @media (min-width: 768px) {
+      .header-spacer {
+        height: calc(80px + env(safe-area-inset-top)) !important;
+      }
+    }
+    
+    /* Padding header plus généreux sur mobile */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 12px 16px !important;
+      }
+    }
+
+    /* Carousel CSS optimisé pour mobile */
     .carousel-container {
       position: relative;
       overflow: hidden;
+      width: 100%;
+      height: 300px;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+    
+    @media (min-width: 768px) {
+      .carousel-container {
+        height: 400px;
+      }
     }
     
     .carousel-slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
       width: 300%;
+      height: 100%;
     }
     
     .carousel-slide {
-      width: 33.333%;
+      width: calc(100% / 3);
+      height: 100%;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      flex-shrink: 0;
+    }
+    
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
     }
     
     /* Radio buttons cachés */
@@ -41,19 +157,19 @@
       display: none;
     }
     
-    /* Affichage des slides selon le radio sélectionné */
+    /* Affichage des slides */
     #slide-1:checked ~ .carousel-slides { transform: translateX(0%); }
     #slide-2:checked ~ .carousel-slides { transform: translateX(-33.333%); }
     #slide-3:checked ~ .carousel-slides { transform: translateX(-66.666%); }
     
-    /* Styles des flèches de navigation */
+    /* Flèches de navigation - Optimisées pour mobile */
     .carousel-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.8);
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -65,58 +181,62 @@
       font-size: 20px;
       font-weight: bold;
       user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     
     .carousel-arrow:hover {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 1);
       transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     
-    .carousel-prev {
-      left: 1rem;
+    .carousel-prev { left: 0.5rem; }
+    .carousel-next { right: 0.5rem; }
+    
+    @media (min-width: 768px) {
+      .carousel-prev { left: 1rem; }
+      .carousel-next { right: 1rem; }
     }
     
-    .carousel-next {
-      right: 1rem;
-    }
-    
-    /* Styles des boutons de navigation (points) */
+    /* Navigation dots */
     .carousel-nav {
       position: absolute;
       bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 0.5rem;
+      gap: 0.75rem;
       z-index: 10;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      border-radius: 20px;
     }
     
     .carousel-dot {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.6);
       cursor: pointer;
       transition: all 0.3s ease;
+    }
+    
+    .carousel-dot:hover {
+      background: rgba(255, 255, 255, 0.8);
     }
     
     #slide-1:checked ~ .carousel-nav .dot-1,
     #slide-2:checked ~ .carousel-nav .dot-2,
     #slide-3:checked ~ .carousel-nav .dot-3 {
-      background: rgba(255, 255, 255, 0.9);
-      transform: scale(1.2);
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.3);
     }
     
-    /* Masquer/afficher les flèches selon le slide actif */
+    /* Logique d'affichage des flèches */
     .carousel-prev, .carousel-next { display: flex; }
-    
-    /* Flèche précédente : masquer sur slide 1 */
     #slide-1:checked ~ .carousel-prev-1 { display: none; }
-    
-    /* Flèche suivante : masquer sur slide 3 */
     #slide-3:checked ~ .carousel-next-3 { display: none; }
     
-    /* Logique des flèches selon le slide actif */
     #slide-1:checked ~ .carousel-prev-2,
     #slide-1:checked ~ .carousel-prev-3,
     #slide-2:checked ~ .carousel-prev-1,
@@ -134,76 +254,140 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- Header -->
+  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ avec safe areas iPhone -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
+    <div class="container mx-auto px-3 py-3 md:py-2 header-container">
+      
+      <!-- Mobile Layout prioritaire -->
+      <div class="flex items-center justify-between">
+        
+        <!-- ✅ Logo adaptatif OPTIMISÉ POUR NETTETÉ -->
+        <div class="flex items-center flex-shrink-0">
           <a href="index.html">
-            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-20 w-auto" />
+            <img src="images/logo3.png" 
+                 alt="Zahnarztpraxis Brix" 
+                 class="logo-optimized h-12 sm:h-14 md:h-16 w-auto object-contain"
+                 width="1208" 
+                 height="388"
+                 loading="eager" />
           </a>
         </div>
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Home</a>
-          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
-          <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors">Team</a>
-        </nav>
-        <!-- Call Button -->
-        <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base">
-          📞 03904 44113
-        </a>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+
+        <!-- Mobile: Call + Menu -->
+        <div class="flex items-center gap-2 md:hidden">
+          <a href="tel:0390444113" 
+             class="bg-dental-blue text-white px-3 py-2 rounded-lg font-semibold text-sm flex items-center gap-1 hover:bg-blue-700 transition-colors mobile-button">
+            📞 <span class="hidden xs:inline">Anrufen</span>
+          </a>
+          
+          <button id="mobile-menu-btn" class="mobile-menu-btn p-2">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop: Navigation centrée + Call Button -->
+        <div class="hidden md:flex items-center justify-between flex-1 ml-8">
+          <!-- Navigation centrée -->
+          <div class="flex-1 flex justify-center">
+            <nav class="flex space-x-8">
+              <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Home</a>
+              <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Leistungen</a>
+              <a href="team.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Team</a>
+            </nav>
+          </div>
+          
+          <!-- Call button à droite -->
+          <a href="tel:0390444113" 
+             class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold whitespace-nowrap">
+            📞 03904 44113
+          </a>
+        </div>
       </div>
-      <!-- Mobile Navigation -->
-      <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-        <a href="index.html" class="block py-2 text-dental-blue font-semibold">Home</a>
-        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
-        <a href="team.html" class="block py-2 text-gray-700">Team</a>
+
+      <!-- Menu mobile optimisé -->
+      <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 mt-2 pt-2">
+        <div class="flex flex-col space-y-1">
+          <a href="index.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            🏠 Home
+          </a>
+          <a href="leistungen.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            🦷 Leistungen
+          </a>
+          <a href="team.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+            👨‍⚕️ Team
+          </a>
+          
+          <!-- Quick contact dans le menu mobile -->
+          <div class="border-t border-gray-200 mt-2 pt-3">
+            <div class="py-2 px-2 text-xs text-gray-600">
+              <div class="font-semibold mb-1">📍 Schnell erreichen:</div>
+              <div class="flex gap-3 mt-3">
+                <a href="tel:0390444113" class="mobile-button bg-dental-blue text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  📞 Anrufen
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
+                   target="_blank" class="mobile-button bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  📍 Route
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
-  <!-- Spacer responsive pour compenser la hauteur du header -->
-  <div class="h-24 md:h-28"></div>
 
-  <!-- Horaires + Téléphone Section (Prioritaire) -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white pt-12 pb-12 md:pt-28 md:pb-28">
+  <!-- Spacer adaptatif avec support safe areas -->
+  <div class="header-spacer"></div>
+
+  <!-- Section horaires optimisée mobile avec UX améliorée -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-16 mobile-section">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Horaires -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
-          <h2 class="text-lg md:text-xl font-semibold mb-4 flex items-center">
+        
+        <!-- Horaires - Layout mobile amélioré avec espacement UX -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <h2 class="text-lg font-semibold mb-6 flex items-center">
             🕒 Öffnungszeiten
           </h2>
-          <div class="space-y-3">
-            <!-- Header colonnes -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base font-bold border-b border-white/30 pb-2">
+          
+          <!-- Version mobile: layout vertical avec meilleur espacement -->
+          <div class="block md:hidden space-y-4">
+            <div class="bg-white/20 rounded-lg schedule-mobile-item">
+              <div class="font-bold text-base mb-2">Montag - Mittwoch</div>
+              <div class="text-sm">08:00-12:00 • 14:00-18:00</div>
+            </div>
+            <div class="bg-white/20 rounded-lg schedule-mobile-item">
+              <div class="font-bold text-base mb-2">Donnerstag - Freitag</div>
+              <div class="text-sm">08:00-12:00</div>
+            </div>
+          </div>
+          
+          <!-- Version desktop: tableau -->
+          <div class="hidden md:block space-y-3">
+            <div class="grid grid-cols-3 gap-2 text-base font-bold border-b border-white/30 pb-2">
               <span></span>
               <span class="text-center">Morgen</span>
               <span class="text-center">Nachmittag</span>
             </div>
-            <!-- Montag - Mittwoch -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
-              <span class="font-bold text-left">Mo - Mi:</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">14:00-18:00</span>
+            <div class="grid grid-cols-3 gap-2 text-base">
+              <span class="font-bold">Mo - Mi:</span>
+              <span class="text-center bg-white/20 rounded px-2 py-1 font-bold">08:00-12:00</span>
+              <span class="text-center bg-white/20 rounded px-2 py-1 font-bold">14:00-18:00</span>
             </div>
-            <!-- Donnerstag- Freitag -->
-            <div class="grid grid-cols-3 gap-1 md:gap-2 text-sm md:text-base">
-              <span class="font-bold text-left">Do - Fr:</span>
-              <span class="text-center bg-white/20 rounded px-1 md:px-2 py-1 font-bold">08:00-12:00</span>
+            <div class="grid grid-cols-3 gap-2 text-base">
+              <span class="font-bold">Do - Fr:</span>
+              <span class="text-center bg-white/20 rounded px-2 py-1 font-bold">08:00-12:00</span>
               <span class="text-center text-gray-300 font-medium">geschlossen</span>
             </div>
           </div>
-          <!-- Info urgences -->
-          <div class="mt-4 pt-3 border-t border-white/30">
-            <p class="text-xs md:text-sm opacity-90">
-              🚨 Bei Notfällen außerhalb Praxiszeit: 
+          
+          <!-- Notdienst avec meilleur espacement -->
+          <div class="mt-6 pt-4 border-t border-white/30">
+            <p class="text-sm opacity-90 leading-relaxed">
+              🚨 Notfälle: 
               <a href="http://www.zbd-boerdekreis.de/seite/294524/hdl.html" 
                  target="_blank" 
                  class="text-yellow-200 hover:text-white underline font-medium">
@@ -212,115 +396,48 @@
             </p>
           </div>
         </div>
-        <!-- Contact -->
-        <div class="bg-white shadow-md rounded-2xl p-6 text-center space-y-4 max-w-md mx-auto">
-          <!-- Anruf-Button -->
+        
+        <!-- Contact - Mobile optimisé avec boutons UX friendly -->
+        <div class="bg-white shadow-md rounded-2xl p-6 text-center space-y-4 max-w-sm mx-auto">
           <a href="tel:0390444113"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-emerald-600 text-white text-lg font-semibold rounded-xl hover:bg-emerald-700 transition">
-            📞 Jetzt anrufen: 03904 44113
+            class="mobile-button inline-flex items-center justify-center w-full bg-emerald-600 text-white text-base font-semibold rounded-xl hover:bg-emerald-700 transition">
+            📞 Jetzt anrufen
           </a>
-          <!-- Adresse -->
-          <div class="text-gray-700 leading-relaxed">
+          
+          <div class="text-gray-700 text-base leading-relaxed py-2">
             <p>Dammühlenweg 13<br>39340 Haldensleben</p>
           </div>
-          <!-- Google Maps Button -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center w-full px-4 py-3 bg-sky-600 text-white text-lg font-semibold rounded-xl hover:bg-sky-700 transition">
-            📍 Auf Karte anzeigen
+          
+          <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
+             target="_blank" rel="noopener noreferrer"
+            class="mobile-button inline-flex items-center justify-center w-full bg-sky-600 text-white text-base font-semibold rounded-xl hover:bg-sky-700 transition">
+            📍 Route planen
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Photo Carousel Section -->
-  <section class="py-12 bg-white">
+  <!-- Présentation mobile-first -->
+  <section class="py-8 md:py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere moderne Praxis</h2>
-        
-        <!-- Carousel Container -->
-        <div class="carousel-container relative w-full rounded-lg overflow-hidden shadow-lg bg-gray-100" style="height:600px;">
-          
-          <!-- Radio buttons cachés pour contrôler le carousel -->
-          <input type="radio" name="carousel" id="slide-1" class="carousel-radio" checked>
-          <input type="radio" name="carousel" id="slide-2" class="carousel-radio">
-          <input type="radio" name="carousel" id="slide-3" class="carousel-radio">
-          
-          <!-- Slides Container -->
-          <div class="carousel-slides">
-            
-            <!-- Room 1 -->
-            <div class="carousel-slide">
-              <img src="images/room1.png"
-                alt="Behandlungsraum 1 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
-              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
-                Behandlungsraum 1
-              </div>
-            </div>
-            
-            <!-- Room 2 -->
-            <div class="carousel-slide">
-              <img src="images/room2.png"
-                alt="Behandlungsraum 2 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
-              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
-                Behandlungsraum 2
-              </div>
-            </div>
-            
-            <!-- Room 3 -->
-            <div class="carousel-slide">
-              <img src="images/room3.png"
-                alt="Behandlungsraum 3 - Moderne Zahnarztpraxis"
-                class="w-full h-full object-cover object-center" />
-              <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
-                Behandlungsraum 3
-              </div>
-            </div>
-            
-          </div>
-          
-          <!-- Flèches de navigation -->
-          <!-- Flèche précédente (visible sauf sur slide 1) -->
-          <label for="slide-1" class="carousel-arrow carousel-prev carousel-prev-2">‹</label>
-          <label for="slide-2" class="carousel-arrow carousel-prev carousel-prev-3">‹</label>
-          
-          <!-- Flèche suivante (visible sauf sur slide 3) -->
-          <label for="slide-2" class="carousel-arrow carousel-next carousel-next-1">›</label>
-          <label for="slide-3" class="carousel-arrow carousel-next carousel-next-2">›</label>
-          
-          <!-- Navigation Dots -->
-          <div class="carousel-nav">
-            <label for="slide-1" class="carousel-dot dot-1"></label>
-            <label for="slide-2" class="carousel-dot dot-2"></label>
-            <label for="slide-3" class="carousel-dot dot-3"></label>
-          </div>
-          
-        </div>
-        
-        <p class="text-center text-gray-600 text-sm mt-4">Unsere moderne Praxis in Haldensleben - 3 vollausgestattete Behandlungsräume</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Présentation Section -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Willkommen in unserer Praxis</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <h2 class="text-xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-gray-800">
+          Willkommen in unserer Praxis
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 items-center">
           <div>
             <img src="images/team/za.png" 
               alt="Zahnarzt Team" 
-              class="w-full h-64 object-cover rounded-lg shadow-md">
+              class="w-full h-48 md:h-64 object-cover rounded-lg shadow-md">
           </div>
-          <div class="space-y-4">
-            <p class="text-gray-700 leading-relaxed">
-              Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Dr. Andrea und Dr. Oliver Brix 
+          <div class="space-y-3">
+            <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+              Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Andrea und Oliver Brix 
               eine umfassende zahnmedizinische Betreuung für die ganze Familie.
+            </p>
+            <p class="text-gray-600 text-sm md:text-base">
+              Unsere moderne Praxis in Haldensleben verbindet bewährte Behandlungsmethoden mit den neuesten Technologien der Zahnmedizin.
             </p>
           </div>
         </div>
@@ -328,106 +445,236 @@
     </div>
   </section>
 
-  <!-- Raccourci Leistungen -->
-  <section class="py-12 bg-gray-50">
+  <!-- Carousel mobile optimisé -->
+  <section class="py-8 md:py-12 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unsere Leistungen</h2>
-        <div class="grid md:grid-cols-3 gap-6 mb-8">
-          <!-- Prophylaxe -->
-          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <div class="text-4xl mb-4 text-center" aria-label="Prophylaxe">🪥</div>
-            <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Prophylaxe</h3>
-            <p class="text-gray-600 text-sm text-center">Professionelle Zahnreinigung und Vorsorge</p>
-          </div>
-          <!-- Zahnerhalt -->
-          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <div class="text-4xl mb-4 text-center" aria-label="Zahnerhalt">🦷</div>
-            <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Zahnerhalt</h3>
-            <p class="text-gray-600 text-sm text-center">Füllungen, Wurzelbehandlungen, Parodontologie</p>
-          </div>
-          <!-- Zahnersatz -->
-          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <div class="text-4xl mb-4 text-center" aria-label="Zahnersatz">👑</div>
-            <h3 class="text-lg font-semibold mb-2 text-dental-blue text-center">Zahnersatz</h3>
-            <p class="text-gray-600 text-sm text-center">Kronen, Brücken, Prothesen</p>
-          </div>
-        </div>
-        <div class="text-center">
-          <a href="leistungen.html"
-            class="bg-dental-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-            Alle Leistungen entdecken →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Raccourci Team -->
-<section class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">Unser Team</h2>
-            <div class="flex justify-center mb-8">
-                <div class="text-center bg-gray-50 p-6 rounded-lg">
-                    <img src="images/team/praxis-team.png" 
-                        alt="Unser Praxisteam" 
-                        class="w-48 h-48 mx-auto rounded-full object-cover mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-dental-blue mb-2">Unser Praxisteam</h3>
-                </div>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl md:text-3xl font-bold text-center mb-6 text-gray-800">
+          Unsere moderne Praxis
+        </h2>
+        
+        <div class="carousel-container">
+          <input type="radio" name="carousel" id="slide-1" class="carousel-radio" checked>
+          <input type="radio" name="carousel" id="slide-2" class="carousel-radio">
+          <input type="radio" name="carousel" id="slide-3" class="carousel-radio">
+          
+          <div class="carousel-slides">
+            <div class="carousel-slide">
+              <img src="images/room1.png" alt="Behandlungsraum 1" />
             </div>
-        <div class="text-center">
-          <a href="team.html" class="bg-dental-teal text-white px-8 py-3 rounded-lg hover:bg-cyan-700 transition-colors font-semibold">
-            Unser Team kennenlernen →
+            <div class="carousel-slide">
+              <img src="images/room2.png" alt="Behandlungsraum 2" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/room3.png" alt="Behandlungsraum 3" />
+            </div>
+          </div>
+          
+          <!-- Flèches optimisées pour mobile -->
+          <label for="slide-1" class="carousel-arrow carousel-prev carousel-prev-2">‹</label>
+          <label for="slide-2" class="carousel-arrow carousel-prev carousel-prev-3">‹</label>
+          <label for="slide-2" class="carousel-arrow carousel-next carousel-next-1">›</label>
+          <label for="slide-3" class="carousel-arrow carousel-next carousel-next-2">›</label>
+          
+          <div class="carousel-nav">
+            <label for="slide-1" class="carousel-dot dot-1"></label>
+            <label for="slide-2" class="carousel-dot dot-2"></label>
+            <label for="slide-3" class="carousel-dot dot-3"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid Leistungen + Team mobile-first -->
+  <section class="py-8 md:py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        
+        <div class="bg-white shadow-lg rounded-2xl p-6 text-center space-y-4 border-l-4 border-dental-blue flex flex-col">
+          <div class="text-4xl md:text-6xl">🦷</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-2xl font-bold text-dental-blue mb-3">Unsere Leistungen</h3>
+            <p class="text-gray-600 text-sm md:text-base mb-6">
+              Von Prophylaxe bis Zahnersatz – entdecken Sie unser komplettes Behandlungsspektrum für Ihre Zahngesundheit.
+            </p>
+          </div>
+          <a href="leistungen.html" 
+             class="inline-flex items-center justify-center w-full px-4 py-3 bg-dental-blue text-white font-semibold rounded-xl hover:bg-blue-700 transition">
+            Alle Leistungen →
+          </a>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-2xl p-6 text-center space-y-4 border-l-4 border-dental-teal flex flex-col">
+          <div class="text-4xl md:text-6xl">🤝</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-2xl font-bold text-dental-teal mb-3">Unser Team</h3>
+            <p class="text-gray-600 text-sm md:text-base mb-6">
+              Lernen Sie unser erfahrenes Team kennen – Andrea & Oliver Brix und unsere kompetenten Mitarbeiterinnen.
+            </p>
+          </div>
+          <a href="team.html" 
+             class="inline-flex items-center justify-center w-full px-4 py-3 bg-dental-teal text-white font-semibold rounded-xl hover:bg-cyan-700 transition">
+            Unser Team →
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Call to Action mobile optimisé -->
+  <section class="py-12 md:py-16 bg-gradient-to-r from-dental-green to-emerald-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Vereinbaren Sie Ihren Termin</h2>
+      <p class="text-base md:text-xl mb-6 md:mb-8 opacity-90">Wir freuen uns auf Ihren Besuch!</p>
+      
+      <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center max-w-sm sm:max-w-md mx-auto">
+        <a href="tel:0390444113" 
+           class="bg-white text-dental-green px-6 py-3 rounded-xl font-bold text-base md:text-lg hover:bg-gray-100 transition flex items-center justify-center">
+          📞 Jetzt anrufen
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
+           target="_blank"
+           class="bg-white/10 border-2 border-white text-white px-6 py-3 rounded-xl font-bold text-base md:text-lg hover:bg-white/20 transition flex items-center justify-center">
+          📍 Anfahrt
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer mobile optimisé -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
         <div>
-          <h3 class="text-lg font-semibold mb-4">Zahnarztpraxis Brix</h3>
+          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Zahnarztpraxis Brix</h3>
           <p class="text-gray-300 text-sm">
             Dammühlenweg 13<br>
             39340 Haldensleben<br>
             (Althaldensleben)
           </p>
         </div>
+        
         <div>
-          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
           <p class="text-gray-300 text-sm">
-            📞 <a href="tel:0390444113" class="hover:text-white">0390444113</a><br>
+            <a href="tel:0390444113" class="hover:text-white">📞 03904 44113</a><br>
+            <a href="tel:0390444113" class="hover:text-white">📠 03904 710781</a>
           </p>
         </div>
+        
         <div>
-          <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
+          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Öffnungszeiten</h3>
           <p class="text-gray-300 text-sm">
             Mo-Mi: 08:00-12:00, 14:00-18:00<br>
             Do-Fr: 08:00-12:00
           </p>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-400 text-sm">&copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.</p>
+      
+      <div class="border-t border-gray-700 mt-6 md:mt-8 pt-6 md:pt-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-gray-400 text-xs md:text-sm text-center sm:text-left">
+            &copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.
+          </p>
+          
+          <!-- Liens footer -->
+          <div class="flex space-x-4 text-xs md:text-sm">
+            <a href="impressum.html" class="text-gray-400 hover:text-white transition-colors">
+              Impressum
+            </a>
+            <span class="text-gray-600">|</span>
+            <a href="datenschutz.html" class="text-gray-400 hover:text-white transition-colors">
+              Datenschutz
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
+    // Menu mobile avec animation fluide
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        
+        // Animation de l'icône
+        const icon = mobileMenuBtn.querySelector('svg');
+        if (icon) {
+          icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(90deg)';
+          icon.style.transition = 'transform 0.2s ease';
+        }
+      });
+      
+      // Fermer le menu au clic sur lien
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          const icon = mobileMenuBtn.querySelector('svg');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        });
       });
     }
 
-    // Smooth scrolling for anchor links
+    // Fermer menu au clic extérieur
+    document.addEventListener('click', (e) => {
+      if (mobileMenuBtn && mobileMenu && 
+          !mobileMenuBtn.contains(e.target) && 
+          !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('svg');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Auto-rotate carousel (plus lent pour une meilleure UX)
+    let currentSlide = 1;
+    const totalSlides = 3;
+    
+    setInterval(() => {
+      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+      const slideElement = document.getElementById(`slide-${currentSlide}`);
+      if (slideElement) slideElement.checked = true;
+    }, 6000); // 6 secondes au lieu de 5
+
+    // Support swipe mobile
+    let startX, endX;
+    const carousel = document.querySelector('.carousel-container');
+    
+    if (carousel) {
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+      
+      carousel.addEventListener('touchend', e => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+      });
+      
+      function handleSwipe() {
+        const threshold = 50;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0 && currentSlide < totalSlides) {
+            // Swipe left - next
+            currentSlide++;
+            document.getElementById(`slide-${currentSlide}`).checked = true;
+          } else if (diff < 0 && currentSlide > 1) {
+            // Swipe right - previous
+            currentSlide--;
+            document.getElementById(`slide-${currentSlide}`).checked = true;
+          }
+        }
+      }
+    }
+
+    // Smooth scrolling pour les liens internes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -439,6 +686,17 @@
           });
         }
       });
+    });
+
+    // Console log pour debug logo
+    console.log('🎯 Logo optimisé chargé - vérifiez la netteté !');
+    
+    // Optionnel: forcer le rechargement de l'image si problème persiste
+    window.addEventListener('load', () => {
+      const logoImg = document.querySelector('.logo-optimized');
+      if (logoImg) {
+        console.log('📸 Logo dimensions:', logoImg.naturalWidth + 'x' + logoImg.naturalHeight);
+      }
     });
   </script>
 </body>

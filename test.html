@@ -18,233 +18,55 @@
       }
     }
   </script>
-  <style>
-    /* ✅ CSS OPTIMISATION LOGO */
-    .logo-optimized {
-      image-rendering: -webkit-optimize-contrast !important;
-      image-rendering: crisp-edges !important;
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
-      transform: translateZ(0) !important;
-      will-change: transform !important;
-      backface-visibility: hidden !important;
-      filter: contrast(1.1) brightness(1.02) !important;
-    }
-
-    /* Tailles optimales pour logo sans espaces blancs */
-    @media (max-width: 640px) {
-      .logo-optimized {
-        max-height: 48px !important;
-        width: auto;
-      }
-    }
-
-    @media (min-width: 641px) and (max-width: 768px) {
-      .logo-optimized {
-        max-height: 56px !important;
-        width: auto;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .logo-optimized {
-        max-height: 64px !important;
-        width: auto;
-      }
-    }
-
-    /* ✅ AMÉLIORATIONS UX MOBILE - BEST PRACTICES iOS */
-    
-    /* Boutons touch-friendly minimum 44px */
-    .mobile-button {
-      min-height: 44px !important;
-      padding: 12px 16px !important;
-    }
-    
-    /* Menu hamburger plus accessible */
-    .mobile-menu-btn {
-      min-width: 44px !important;
-      min-height: 44px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    
-    /* Section spacing plus généreux */
-    .mobile-section {
-      padding: 16px 0 !important;
-    }
-
-    /* ✅ OPTIMISATIONS HEADER POUR IPHONE */
-    
-    /* Support des safe areas iPhone (encoche, Dynamic Island) */
-    header {
-      padding-top: env(safe-area-inset-top) !important;
-      min-height: 64px !important;
-    }
-    
-    /* Hauteur adaptative du spacer selon l'appareil */
-    .header-spacer {
-      height: calc(64px + env(safe-area-inset-top)) !important;
-    }
-    
-    @media (min-width: 768px) {
-      .header-spacer {
-        height: calc(80px + env(safe-area-inset-top)) !important;
-      }
-    }
-    
-    /* Padding header plus généreux sur mobile */
-    @media (max-width: 768px) {
-      .header-container {
-        padding: 12px 16px !important;
-      }
-    }
-
-    /* ✅ STYLES SPÉCIFIQUES TEAM */
-    .team-card {
-      transition: all 0.3s ease;
-    }
-    
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    
-    .team-image {
-      transition: transform 0.3s ease;
-    }
-    
-    .team-card:hover .team-image {
-      transform: scale(1.05);
-    }
-    
-    .doctor-image {
-      transition: all 0.3s ease;
-      filter: brightness(1.02) contrast(1.05);
-    }
-    
-    .doctor-image:hover {
-      transform: scale(1.02);
-      filter: brightness(1.05) contrast(1.1);
-    }
-  </style>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-900">
-
-  <!-- Navbar Bootstrap -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h5 class="text-white h4">Collapsed content</h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
-      <!-- Tu peux ajouter ici des liens ou du contenu utile -->
-    </div>
-  </div>
-
-  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ -->
+  <!-- Header harmonisé -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-3 py-3 md:py-2 header-container">
-      
-      <!-- Mobile Layout prioritaire -->
-      <div class="flex items-center justify-between">
-        
-        <!-- ✅ Logo adaptatif OPTIMISÉ -->
-        <div class="flex items-center flex-shrink-0">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
           <a href="index.html">
-            <img src="images/logo3.png" 
-                 alt="Zahnarztpraxis Brix" 
-                 class="logo-optimized h-12 sm:h-14 md:h-16 w-auto object-contain"
-                 width="1208" 
-                 height="388"
-                 loading="eager" />
+            <img src="images/logo3.png" alt="Zahnarztpraxis Brix Logo" class="h-16 md:h-20 w-auto" />
           </a>
         </div>
-
-        <!-- Mobile: Call + Menu -->
-        <div class="flex items-center gap-2 md:hidden">
-          <a href="tel:0390444113" 
-             class="bg-dental-blue text-white px-3 py-2 rounded-lg font-semibold text-sm flex items-center gap-1 hover:bg-blue-700 transition-colors mobile-button">
-            📞 <span class="hidden xs:inline">Anrufen</span>
-          </a>
-          
-          <button id="mobile-menu-btn" class="mobile-menu-btn p-2">
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Desktop: Navigation centrée + Call Button -->
-        <div class="hidden md:flex items-center justify-between flex-1 ml-8">
-          <!-- Navigation centrée -->
-          <div class="flex-1 flex justify-center">
-            <nav class="flex space-x-8">
-              <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Home</a>
-              <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors font-medium">Leistungen</a>
-              <a href="team.html" class="text-dental-blue font-bold border-b-2 border-dental-blue">Team</a>
-            </nav>
-          </div>
-          
-          <!-- Call button à droite -->
-          <a href="tel:0390444113" 
-             class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold whitespace-nowrap">
-            📞 03904 44113
-          </a>
-        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-dental-blue transition-colors">Home</a>
+          <a href="leistungen.html" class="text-gray-700 hover:text-dental-blue transition-colors">Leistungen</a>
+          <a href="team.html" class="text-dental-blue font-semibold border-b-2 border-dental-blue">Team</a>
+        </nav>
+        <!-- Call Button -->
+        <a href="tel:0390444113" class="bg-dental-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg flex items-center justify-center" aria-label="Anrufen">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 14a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5a2 2 0 00-2 2v2zm14-14a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5a2 2 0 012-2h2zm0 14a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2a2 2 0 00-2 2v2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 01-6 0" />
+          </svg>
+        </a>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-
-      <!-- Menu mobile optimisé -->
-      <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 mt-2 pt-2">
-        <div class="flex flex-col space-y-1">
-          <a href="index.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-            🏠 Home
-          </a>
-          <a href="leistungen.html" class="py-4 px-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-            🦷 Leistungen
-          </a>
-          <a href="team.html" class="py-4 px-3 text-dental-blue font-bold bg-blue-50 rounded-lg">
-            👨‍⚕️ Team
-          </a>
-          
-          <!-- Quick contact dans le menu mobile -->
-          <div class="border-t border-gray-200 mt-2 pt-3">
-            <div class="py-2 px-2 text-xs text-gray-600">
-              <div class="font-semibold mb-1">📍 Schnell erreichen:</div>
-              <div class="flex gap-3 mt-3">
-                <a href="tel:0390444113" class="mobile-button bg-dental-blue text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  📞 Anrufen
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Dammühlenweg+13,+39340+Haldensleben" 
-                   target="_blank" class="mobile-button bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  📍 Route
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Mobile Navigation -->
+      <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+        <a href="index.html" class="block py-2 text-gray-700">Home</a>
+        <a href="leistungen.html" class="block py-2 text-gray-700">Leistungen</a>
+        <a href="team.html" class="block py-2 text-dental-blue font-semibold">Team</a>
       </nav>
     </div>
   </header>
 
-  <!-- Spacer adaptatif avec support safe areas -->
-  <div class="header-spacer"></div>
+  <!-- Spacer responsive pour compenser la hauteur du header -->
+  <div class="h-24 md:h-28"></div>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-12 mobile-section">
+  <!-- Hero Section harmonisée -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-4">Unser Team</h1>
-        <p class="text-base md:text-lg opacity-90">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Unser Team</h1>
+        <p class="text-lg opacity-90">
           Erfahrung und Kompetenz für Ihre Zahngesundheit
         </p>
       </div>
@@ -252,34 +74,14 @@
   </section>
 
   <!-- Team Section -->
-  <section class="py-8 md:py-12 bg-white mobile-section">
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-
-        <!-- Zahnärzte Section -->
         <div class="mb-16">
-          <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">
-            Unsere Zahnärzte
-          </h2>
-          
           <div class="flex flex-col items-center">
-            <div class="w-full max-w-2xl">
-              <img src="images/team/za.png"
-                   alt="Andrea und Oliver Brix"
-                   class="doctor-image w-full h-auto rounded-3xl object-cover shadow-xl border-4 border-dental-blue/20 bg-white" />
-            </div>
-            
             <div class="text-center mt-8 max-w-3xl">
-              <h3 class="text-2xl md:text-3xl font-bold text-dental-blue mb-3">
-                Andrea & Oliver Brix
-              </h3>
-              <p class="text-lg md:text-xl text-gray-600 mb-6 font-medium">
-                Zahnärzte & Praxisinhaber
-              </p>
-              
               <div class="bg-gradient-to-r from-dental-blue/10 to-dental-teal/10 p-6 rounded-2xl">
                 <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-                  Mit über <strong class="text-dental-blue">35 Jahren Erfahrung</strong> in der Zahnheilkunde führen wir gemeinsam unsere Praxis mit Leidenschaft und Fachwissen. 
                   Unser Ziel ist es, Ihnen die bestmögliche zahnmedizinische Betreuung zu bieten.
                 </p>
               </div>
@@ -292,9 +94,7 @@
           <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">
             Unser Praxisteam
           </h2>
-          
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-8">
-            
             <!-- Team Mitglied 1 -->
             <div class="team-card bg-white rounded-2xl p-6 shadow-lg text-center">
               <div class="overflow-hidden rounded-xl mb-4">
@@ -350,38 +150,21 @@
               <p class="text-gray-600 text-sm font-medium">Zahnmedizinische Fachangestellte</p>
             </div>
           </div>
-          
-          <!-- Message d'équipe -->
-          <div class="text-center">
-            <div class="bg-gradient-to-r from-dental-teal/10 to-dental-green/10 p-6 md:p-8 rounded-2xl max-w-4xl mx-auto">
-              <h3 class="text-xl font-bold text-dental-teal mb-4">
-                🤝 Unser gemeinsames Ziel
-              </h3>
-              <p class="text-gray-700 text-base md:text-lg leading-relaxed"> 
-                Unser erfahrenes Team steht Ihnen mit Kompetenz und Freundlichkeit zur Seite. 
-                Jeder Mitarbeiter bringt seine Expertise ein, um Ihnen den bestmöglichen Service zu bieten.
-              </p>
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="py-8 md:py-12 bg-gray-50 mobile-section">
+  <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-xl md:text-3xl font-bold mb-6 text-gray-800">
-          Lernen Sie uns persönlich kennen
-        </h2>
-        
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Lernen Sie uns persönlich kennen</h2>
         <div class="bg-gradient-to-r from-dental-blue to-dental-teal text-white p-6 md:p-8 rounded-2xl shadow-lg">
-          <h3 class="text-lg md:text-xl font-semibold mb-4">Jetzt Termin vereinbaren</h3>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="tel:0390444113" 
-               class="mobile-button bg-white text-dental-blue font-bold rounded-xl hover:bg-gray-100 transition-colors">
+          <h3 class="text-xl font-semibold mb-6">Wir beraten Sie gerne ausführlich</h3>
+          <div class="flex justify-center">
+            <a href="tel:0390444113"
+              class="mobile-button bg-white text-dental-blue px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition flex items-center justify-center shadow-lg hover:shadow-xl">
               📞 03904 44113
             </a>
           </div>
@@ -390,112 +173,16 @@
     </div>
   </section>
 
-  <!-- Footer mobile optimisé -->
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-        <div>
-          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Zahnarztpraxis Brix</h3>
-          <p class="text-gray-300 text-sm">
-            Dammühlenweg 13<br>
-            39340 Haldensleben<br>
-            (Althaldensleben)
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
-          <p class="text-gray-300 text-sm">
-            <a href="tel:0390444113" class="hover:text-white">📞 03904 44113</a><br>
-            <a href="tel:0390444113" class="hover:text-white">📠 03904 710781</a>
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Öffnungszeiten</h3>
-          <p class="text-gray-300 text-sm">
-            Mo-Mi: 08:00-12:00, 14:00-18:00<br>
-            Do-Fr: 08:00-12:00
-          </p>
-        </div>
-      </div>
-      
-      <div class="border-t border-gray-700 mt-6 md:mt-8 pt-6 md:pt-8">
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p class="text-gray-400 text-xs md:text-sm text-center sm:text-left">
-            &copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.
-          </p>
-          
-          <!-- Liens footer -->
-          <div class="flex space-x-4 text-xs md:text-sm">
-            <a href="impressum.html" class="text-gray-400 hover:text-white transition-colors">
-              Impressum
-            </a>
-            <span class="text-gray-600">|</span>
-            <a href="datenschutz.html" class="text-gray-400 hover:text-white transition-colors">
-              Datenschutz
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS Bundle (avant </body>) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer (optionnel, à ajouter si tu veux comme sur Leistungen) -->
 
   <script>
-    // Menu mobile avec animation fluide
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        
-        // Animation de l'icône
-        const icon = mobileMenuBtn.querySelector('svg');
-        if (icon) {
-          icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(90deg)';
-          icon.style.transition = 'transform 0.2s ease';
-        }
-      });
-      
-      // Fermer le menu au clic sur lien
-      const mobileLinks = mobileMenu.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          const icon = mobileMenuBtn.querySelector('svg');
-          if (icon) icon.style.transform = 'rotate(0deg)';
-        });
       });
     }
-
-    // Fermer menu au clic extérieur
-    document.addEventListener('click', (e) => {
-      if (mobileMenuBtn && mobileMenu && 
-          !mobileMenuBtn.contains(e.target) && 
-          !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
-        const icon = mobileMenuBtn.querySelector('svg');
-        if (icon) icon.style.transform = 'rotate(0deg)';
-      }
-    });
-
-    // Smooth scrolling pour les liens internes
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
   </script>
 </body>
 </html>

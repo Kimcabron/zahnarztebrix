@@ -19,7 +19,7 @@
     }
   </script>
   <style>
-    /* ✅ CSS OPTIMISATION LOGO */
+    /* ✅ CSS OPTIMISATION LOGO - NOUVEAU */
     .logo-optimized {
       image-rendering: -webkit-optimize-contrast !important;
       image-rendering: crisp-edges !important;
@@ -31,24 +31,24 @@
       filter: contrast(1.1) brightness(1.02) !important;
     }
 
-    /* Tailles optimales pour logo sans espaces blancs */
+    /* Tailles optimales pour logo - Version plus grande (comme autres pages) */
     @media (max-width: 640px) {
-      .logo-optimized {
-        max-height: 48px !important;
-        width: auto;
-      }
-    }
-
-    @media (min-width: 641px) and (max-width: 768px) {
       .logo-optimized {
         max-height: 56px !important;
         width: auto;
       }
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: 641px) and (max-width: 768px) {
       .logo-optimized {
         max-height: 64px !important;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .logo-optimized {
+        max-height: 80px !important;
         width: auto;
       }
     }
@@ -85,12 +85,12 @@
     
     /* Hauteur adaptative du spacer selon l'appareil */
     .header-spacer {
-      height: calc(64px + env(safe-area-inset-top)) !important;
+      height: calc(80px + env(safe-area-inset-top)) !important;
     }
     
     @media (min-width: 768px) {
       .header-spacer {
-        height: calc(80px + env(safe-area-inset-top)) !important;
+        height: calc(96px + env(safe-area-inset-top)) !important;
       }
     }
     
@@ -98,6 +98,17 @@
     @media (max-width: 768px) {
       .header-container {
         padding: 12px 16px !important;
+      }
+    }
+
+    /* ✅ CORRECTION BANNIÈRE - ESPACEMENT DEPUIS HEADER */
+    .banner-spacing {
+      margin-top: 1rem !important; /* 16px d'espacement depuis le header */
+    }
+    
+    @media (min-width: 768px) {
+      .banner-spacing {
+        margin-top: 1.5rem !important; /* 24px sur desktop */
       }
     }
 
@@ -164,40 +175,24 @@
       border-radius: 0.5rem;
     }
   </style>
-  <!-- Ajoute ceci juste après <body> -->
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h5 class="text-white h4">Collapsed content</h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
-      <!-- Tu peux ajouter ici des liens ou du contenu utile -->
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ -->
+  <!-- ✅ HEADER MOBILE-FIRST OPTIMISÉ avec safe areas iPhone -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
     <div class="container mx-auto px-3 py-3 md:py-2 header-container">
       
       <!-- Mobile Layout prioritaire -->
       <div class="flex items-center justify-between">
         
-        <!-- ✅ Logo adaptatif OPTIMISÉ -->
+        <!-- ✅ Logo adaptatif OPTIMISÉ POUR NETTETÉ - Version plus grande -->
         <div class="flex items-center flex-shrink-0">
           <a href="index.html">
             <img src="images/logo3.png" 
                  alt="Zahnarztpraxis Brix" 
-                 class="logo-optimized h-12 sm:h-14 md:h-16 w-auto object-contain"
+                 class="logo-optimized h-14 sm:h-16 md:h-20 w-auto object-contain"
                  width="1208" 
                  height="388"
                  loading="eager" />
@@ -273,8 +268,8 @@
   <!-- Spacer adaptatif avec support safe areas -->
   <div class="header-spacer"></div>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-12 mobile-section">
+  <!-- Hero Section avec espacement depuis header -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-12 mobile-section banner-spacing">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-4">Datenschutzerklärung</h1>
@@ -481,6 +476,7 @@
       </div>
     </div>
   </section>
+
   <!-- Retour à l'accueil -->
   <section class="py-8 bg-gray-50 mobile-section">
     <div class="container mx-auto px-4 text-center">
@@ -491,7 +487,7 @@
     </div>
   </section>
 
-  <!-- Footer mobile optimisé -->
+  <!-- Footer mobile optimisé avec correction -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -527,19 +523,84 @@
             &copy; 2025 Zahnarztpraxis Brix. Alle Rechte vorbehalten.
           </p>
           
-          <!-- Liens footer -->
+          <!-- ✅ Liens footer CORRIGÉS - Datenschutz sélectionné -->
           <div class="flex space-x-4 text-xs md:text-sm">
-            <span class="text-dental-blue font-medium">Impressum</span>
-            <span class="text-gray-600">|</span>
-            <a href="datenschutz.html" class="text-gray-400 hover:text-white transition-colors">
-              Datenschutz
+            <a href="impressum.html" class="text-gray-400 hover:text-white transition-colors">
+              Impressum
             </a>
+            <span class="text-gray-600">|</span>
+            <span class="text-dental-blue font-medium">Datenschutz</span>
           </div>
         </div>
       </div>
     </div>
   </footer>
+
   <!-- Bootstrap JS Bundle (avant </body>) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Menu mobile avec animation fluide
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Animation de l'icône
+        const icon = mobileMenuBtn.querySelector('svg');
+        if (icon) {
+          icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(90deg)';
+          icon.style.transition = 'transform 0.2s ease';
+        }
+      });
+      
+      // Fermer le menu au clic sur lien
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          const icon = mobileMenuBtn.querySelector('svg');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        });
+      });
+    }
+
+    // Fermer menu au clic extérieur
+    document.addEventListener('click', (e) => {
+      if (mobileMenuBtn && mobileMenu && 
+          !mobileMenuBtn.contains(e.target) && 
+          !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('svg');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Smooth scrolling pour les liens internes
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Console log pour debug logo
+    console.log('🎯 Logo optimisé chargé - vérifiez la netteté !');
+    
+    // Optionnel: forcer le rechargement de l'image si problème persiste
+    window.addEventListener('load', () => {
+      const logoImg = document.querySelector('.logo-optimized');
+      if (logoImg) {
+        console.log('📸 Logo dimensions:', logoImg.naturalWidth + 'x' + logoImg.naturalHeight);
+      }
+    });
+  </script>
 </body>
 </html>

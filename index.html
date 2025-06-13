@@ -109,6 +109,17 @@
       }
     }
 
+    /* ✅ CORRECTION BANNIÈRE INDEX - ESPACEMENT DEPUIS HEADER */
+    .banner-spacing {
+      margin-top: 1rem !important; /* 16px d'espacement depuis le header */
+    }
+    
+    @media (min-width: 768px) {
+      .banner-spacing {
+        margin-top: 1.5rem !important; /* 24px sur desktop */
+      }
+    }
+
     /* Carousel CSS optimisé pour mobile */
     .carousel-container {
       position: relative;
@@ -344,8 +355,8 @@
   <!-- Spacer adaptatif avec support safe areas -->
   <div class="header-spacer"></div>
 
-  <!-- Section horaires optimisée mobile avec UX améliorée -->
-  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-16 mobile-section">
+  <!-- ✅ SECTION HORAIRES AVEC ESPACEMENT CORRIGÉ -->
+  <section class="bg-gradient-to-r from-dental-blue to-dental-teal text-white py-8 md:py-16 mobile-section banner-spacing">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         
@@ -437,9 +448,6 @@
             <p class="text-gray-700 leading-relaxed text-base md:text-lg">
               Mit über <strong>35 Jahren Erfahrung</strong> in der Zahnheilkunde bieten Andrea und Oliver Brix 
               eine umfassende zahnmedizinische Betreuung für die ganze Familie.
-            </p>
-            <p class="text-gray-600 text-sm md:text-base">
-              Unsere moderne Praxis in Haldensleben verbindet bewährte Behandlungsmethoden mit den neuesten Technologien der Zahnmedizin.
             </p>
           </div>
         </div>
